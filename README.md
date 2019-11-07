@@ -20,8 +20,8 @@ Our top UI engineer has already made an initial implementation of the store with
 **Using the framework/library of your choice you have to:**
 - Implement the cart logic with the following **requisites**:
   - Have a Checkout class, that **can** be instantiated with products and discounts available.
-  - Allow adding products to the checkout with the `scan` method, passing the product ID as `string` in his first argument it will return a self Checkout instance.
-  - Allow calculating the total price with the `total` method, which won't accept any arguments and will return the price as `number`.
+  - Allow adding products to the checkout with the `scan` method, passing the product ID as `string` in his first argument.
+  - Allow calculating the total price with the `total` method, which won't accept any arguments and will return the total price (discount already applied) as `number`.
     Example of how it would work:
     ```javascript
       const co = new Checkout(pricingRules);
