@@ -13,24 +13,24 @@ MUG          | Cafify Coffee Mug   |   7.50€
 
 And we are offering users these discounts:
  * 2-for-1 promotions: buy two of the same product, get one free, applied to `CAP` items.
- * bulk discounts: buying x or more of a product, the price of that product is reduced, applied to `TSHIRT` item. P.e. if you buy 3 or more `TSHIRT` items, the price per unit should be 19.00€.
+ * bulk discounts: buying 3 or more of `TSHIRT` product, the price of that product is reduced 5%. E.g., if you buy 3 or more `TSHIRT` items, the price per unit should be 19.00€.
 
 Our top UI engineer has already made an initial implementation of the store with vanilla html and css, but it lacks the implementation.
 
-**Using the framework/library of your choice you should:**
-- Implement the cart logic with the following requisites:
-  - Have a Checkout class, that can be instantiated with products and discounts available.
-  - Allow adding products to the checkout with the `scan` method.
-  - Allow calculating the total price with the `price` method.
+**Using the framework/library of your choice you have to:**
+- Implement the cart logic with the following **requisites**:
+  - Have a Checkout class, that **can** be instantiated with products and discounts available.
+  - Allow adding products to the checkout with the `scan` method, passing the product ID as `string` in his first argument.
+  - Allow calculating the total price with the `total` method, which won't accept any arguments and will return the total price (discount already applied) as `number`.
     Example of how it would work:
-    ```
+    ```javascript
       const co = new Checkout(pricingRules);
       co.scan("TSHIRT").scan("CAP").scan("TSHIRT");
-      const price = co.total();
+      const totalPrice = co.total();
     ```
   - Add any extra method you may need to fulfill UI requirements
 
-- Properly decompose the markup in components or whatever it suits you better to make it a production ready app.
+- Properly decompose the markup in components or whatever it suits you better to make it a production ready App.
 
 - Add the presentation logic to update "Order summary" subsection whenever a product is added or removed.
 You should use the `Checkout` class to get the total and discounts
