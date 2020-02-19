@@ -6,13 +6,13 @@ The current prices of the products are the following:
 ```
 Code         | Name                |  Price
 -------------------------------------------------
-CAP          | Cabify Cap          |   5.00€
 TSHIRT       | Cabify T-Shirt      |  20.00€
-MUG          | Cafify Coffee Mug   |   7.50€
+MUG          | Cafify Coffee Mug   |   5.00€
+CAP          | Cabify Cap          |  10.00€
 ```
 
 And we are offering users these discounts:
- * 2-for-1 promotions: buy two of the same product, get one free, applied to `CAP` items.
+ * 2-for-1 promotions: buy two of the same product, get one free, applied to `MUG` items.
  * bulk discounts: buying 3 or more of `TSHIRT` product, the price of that product is reduced 5%. E.g., if you buy 3 or more `TSHIRT` items, the price per unit should be 19.00€.
 
 Our top UI engineer has already made an initial implementation of the store with vanilla html and css, but it lacks the implementation.
