@@ -1,0 +1,39 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "html"
+    ],
+    "rules": {
+        "prefer-arrow-callback": "error",
+        "func-style": ["error", "expression"],
+        "no-param-reassign": "error",
+        "no-shadow": "error",
+        "no-console": "error",
+        "max-classes-per-file": "error",
+        "no-empty": "error",
+        "curly": "error",
+        "max-len": ["error", {"code": 132, "comments": 162}],
+        "max-lines": ["error", 1000],
+        "quotes": ["error", "single"],
+        "no-useless-escape": "off",
+        "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "@typescript-eslint/no-explicit-any": "error",
+        "@typescript-eslint/no-magic-numbers": ["error", { "ignore": [-1, 0, 1, 2] }],
+        "@typescript-eslint/no-empty-interface": "error",
+        "@typescript-eslint/no-unused-vars": "error"
+    }
+}

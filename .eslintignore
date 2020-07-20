@@ -1,0 +1,10 @@
+/build/**
+/coverage/**
+/docs/**
+/jsdoc/**
+/test**
+/tmp/**
+/node_modules/**
+/src/favicon.png
+/coverage/**
+!.eslintrc.js
