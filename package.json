@@ -1,8 +1,8 @@
 {
   "name": "frontend-shopping-cart-challenge-deeleman",
   "version": "0.9.0",
-  "description": "Customisable shopping cart with real-time refreshing functionality",
-  "main": "index.js",
+  "description": "Interactive, customisable shopping cart with discounts computation functionality",
+  "main": "src/index.js",
   "repository": "https://gitlab.com/cabify-challenge/frontend-shopping-cart-challenge-deeleman",
   "author": "Pablo Deeleman <deeleman@gmail.com>",
   "license": "MIT",
