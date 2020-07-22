@@ -16,7 +16,7 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
-      "@frontend-cart/*": ["app/*"]
+      "@shopping-cart/*": ["app/*"]
     }
   },
   "exclude": [
