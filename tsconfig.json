@@ -13,7 +13,11 @@
     "esModuleInterop": true,
     "strict": true, 
     "types": ["jest", "node"],
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "paths": {
+      "@frontend-cart/*": ["app/*"]
+    }
   },
   "exclude": [
     "**/*.spec.ts",

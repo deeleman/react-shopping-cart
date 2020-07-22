@@ -1,0 +1,17 @@
+[
+  {
+    "type": "2x1",
+    "eligibleItems": ["CAP"]
+  },
+  {
+    "type": "bulk",
+    "eligibleItems": ["TSHIRT"],
+    "discount": 0.15,
+    "minimumItems": 3
+  },
+  {
+    "type": "promoCode",
+    "eligibleItems": [],
+    "codeDiscounts": []
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "X7R2OPX",
+    "code": "TSHIRT",
+    "name": "Cabify T-Shirt",
+    "price": 20.00
+  }, 
+  {
+    "id": "X2G2OPZ",
+    "code": "MUG",
+    "name": "Cafify Coffee Mug",
+    "price": 5.00
+  },
+  {
+    "id": "X3W2OPY",
+    "code": "CAP",
+    "name": "Cabify Cap",
+    "price": 10.00
+  }
+]
