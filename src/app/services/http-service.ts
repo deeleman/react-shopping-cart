@@ -15,7 +15,7 @@ enum HttpStatus {
  * @param endpointUrl URL of remote resource
  * @returns Typed promise with response output, featuring error handling functionality
  */
-export const httpService = <T>(endpointUrl: string): Promise<T> => {
+export const httpService = async <T>(endpointUrl: string): Promise<T> => {
   return fetch(endpointUrl)
     .then((response: Response) => {
       if (response.ok && response.status >= HttpStatus.Success && response.status < HttpStatus.Redirect) {
