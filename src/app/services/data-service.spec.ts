@@ -55,11 +55,10 @@ describe('dataService', () => {
       discounts: discountsEndpointUrlMock,
       fakeToken: 'https://test.dev/api/v1/removed-endpoint'
     };
+
+    const promiseRejectSpy = jest.fn();
+    await dataService(testPayload).then(void 0, promiseRejectSpy);
     
-    try {
-      await dataService(testPayload);
-    } catch(error) {
-      expect(error).toEqual('Http Error 404');
-    }
+    expect(promiseRejectSpy).toHaveBeenCalledWith(new Error('Http Error 404'));
   });
 });
