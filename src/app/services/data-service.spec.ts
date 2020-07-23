@@ -21,7 +21,7 @@ describe('dataService', () => {
     });
   });
 
-  afterAll(() => (httpService as jest.Mock).mockClear());
+  afterEach(() => (httpService as jest.Mock).mockClear());
 
   it('should return a single valid key/value pair with a matching endpoint key property and its API response', async () => {
     const testPayload = {
