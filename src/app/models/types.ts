@@ -20,5 +20,5 @@ export type PricingRules = {
 }
 
 export interface ItemScanner {
-  scan: (itemCode: ItemCode) => ItemScanner;
+  scan: (itemCode: ItemCode, quantity?: number) => ItemScanner;
 }

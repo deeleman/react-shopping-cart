@@ -1,4 +1,4 @@
-import { PricingRules, ItemCode, ItemScanner, CartItem } from './checkout.models';
+import { PricingRules, ItemCode, ItemScanner, CartItem } from './types';
 
 /**
  * The Checkout class represents a stateful shopping cart object
@@ -9,6 +9,14 @@ export class Checkout implements ItemScanner {
    * @readonly
    */
   readonly cartItems: CartItem[];
+
+  /**
+   * Instantiate a Checkout object, defining the products catalogue upfront
+   * @param pricingRules Object instance containing all products available and its pricing details
+   */
+  constructor(private readonly pricingRules: PricingRules) {
+    this.cartItems = this.pricingRules.items.map((item) => ({ ...item, quantity: 0 }))
+  }
 
   /**
    * Array of items ordered, informing of quantity per each
@@ -34,21 +42,16 @@ export class Checkout implements ItemScanner {
     return this.cartItems.reduce((subTotal, item) => (item.quantity * item.price) + subTotal, 0)
   }
 
-  /**
-   * Instantiate a Checkout object, defining the products catalogue upfront
-   * @param pricingRules Object instance containing all products available and its pricing details
-   */
-  constructor(private readonly pricingRules: PricingRules) {
-    this.cartItems = this.pricingRules.items.map((item) => ({ ...item, quantity: 0 }))
-  }
-
-  /**
+ /**
    * Increases the quantity by 1 from the overall amount of items currently ordered for a given product type
    * @param itemCode Code of the scanned product
+   * @param quantity Optional cart item quantity which, if set, will override existing one
    * @returns ItemScanner interface providing support for running multiple chained calls to the scan() method
    */
-  scan(itemCode: ItemCode): ItemScanner {
-    this.updateQuantityByItemCode(itemCode, (quantity: number) => quantity + 1);
+  scan(itemCode: ItemCode, quantity?: number): ItemScanner {
+    this.updateQuantityByItemCode(itemCode, (currentQuantity: number) => 
+      quantity !== undefined ? (quantity > 0 ? quantity : 0) : (currentQuantity + 1)
+    );
 
     return {
       scan: this.scan.bind(this),
@@ -61,15 +64,6 @@ export class Checkout implements ItemScanner {
    */
   remove(itemCode: ItemCode): void {
     this.updateQuantityByItemCode(itemCode, (quantity: number) => quantity > 1 ? quantity - 1 : 0);
-  }
-
-  /**
-   * Sets an absolute (non-relative) quantity for a given product type
-   * @param itemCode Code of the product whose ordered quantity has to be set
-   * @param amount Quantity to be set, which will override existing one
-   */
-  handpickAmount(itemCode: ItemCode, amount: number): void {
-    this.updateQuantityByItemCode(itemCode, (quantity: number) => amount > 0 ? amount : 0);
   }
 
   /**
