@@ -1,13 +1,18 @@
 import React from 'react';
 
-export const SummaryTotal: React.FunctionComponent = (props) => (
+interface SummaryTotalProps {
+  total: number;
+  isLoading: boolean;
+}
+
+export const SummaryTotal: React.FunctionComponent<SummaryTotalProps> = ({ total, isLoading}) => (
   <div className="summary-total wrapper">
     <ul>
       <li>
         <span className="summary-total-cost">Total cost</span>
-        <span className="summary-total-price">107€</span>
+        <span className="summary-total-price">{total}€</span>
       </li>
     </ul>
-    <button type="submit">Checkout</button>
+    <button type="submit" disabled={isLoading}>Checkout</button>
   </div>
 );

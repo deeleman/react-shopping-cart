@@ -1,87 +1,46 @@
 import React from 'react';
-import capImage from './../../../img/cap.png';
-import mugImage from './../../../img/mug.png';
-import shirtImage from './../../../img/shirt.png';
+import images from './../../../img/*.png';
+import { CartItem, ItemCode } from 'shopping-cart/types';
+import { ProductQuantity } from './ProductQuantity';
 
-export const ProductsList: React.FunctionComponent = () => (
-  <ul className="products-list">
-    <li className="product row">
-      <div className="col-product">
-        <figure className="product-image">
-          <img src={shirtImage} alt="Shirt" />
-          <div className="product-description">
-            <h1>Shirt</h1>
-            <p className="product-code">Product code X7R2OPX</p>
+interface ProductsListProps {
+  items: CartItem[];
+  scan: (itemCode: ItemCode, quantity?: number) => void;
+  remove: (itemCode: ItemCode) => void;
+}
+
+export const ProductsList: React.FunctionComponent<ProductsListProps> = ({ items, scan, remove }) => {
+  return (
+    <ul className="products-list">
+      { items.map((cartItem) => (
+        <li key={cartItem.id} className="product row">
+          <div className="col-product">
+            <figure className="product-image">
+              <img src={images[cartItem.shortName.toLowerCase()]} alt={cartItem.shortName} />
+              <div className="product-description">
+                <h1>{cartItem.shortName}</h1>
+                <p className="product-code">Product code {cartItem.id}</p>
+              </div>
+            </figure>
           </div>
-        </figure>
-      </div>
-      <div className="col-quantity">
-        <button className="count">-</button>
-        <input type="text" className="product-quantity" value="3" />
-        <button className="count">+</button>
-      </div>
-      <div className="col-price">
-        <span className="product-price">20</span
-        ><span className="product-currency currency">€</span>
-      </div>
-      <div className="col-total">
-        <span className="product-price">60</span
-        ><span className="product-currency currency">€</span>
-      </div>
-    </li>
-    <li className="product row">
-      <div className="col-product">
-        <figure className="product-image">
-          <img src={mugImage} alt="Mug" />
-          <div className="product-description">
-            <h1>Mug</h1>
-            <p className="product-code">Product code X2G2OPZ</p>
+          <div className="col-quantity">
+            <ProductQuantity
+              quantity={cartItem.quantity}
+              add={() => scan(cartItem.code)}
+              remove={() => remove(cartItem.code)}
+              edit={(quantity) => scan(cartItem.code, quantity)}
+            />
           </div>
-        </figure>
-      </div>
-      <div className="col-quantity">
-        <button className="count">-</button
-        ><input type="text" className="product-quantity" value="4" /><button
-          className="count"
-        >
-          +
-        </button>
-      </div>
-      <div className="col-price">
-        <span className="product-price">5</span
-        ><span className="product-currency currency">€</span>
-      </div>
-      <div className="col-total">
-        <span className="product-price">20</span
-        ><span className="product-currency currency">€</span>
-      </div>
-    </li>
-    <li className="product row">
-      <div className="col-product">
-        <figure className="product-image">
-          <img src={capImage} alt="Cap" />
-          <div className="product-description">
-            <h1>Cap</h1>
-            <p className="product-code">Product code X3W2OPY</p>
+          <div className="col-price">
+            <span className="product-price">{cartItem.price}</span>
+            <span className="product-currency currency">€</span>
           </div>
-        </figure>
-      </div>
-      <div className="col-quantity">
-        <button className="count">-</button
-        ><input type="text" className="product-quantity" value="4" /><button
-          className="count"
-        >
-          +
-        </button>
-      </div>
-      <div className="col-price">
-        <span className="product-price">10</span
-        ><span className="product-currency currency">€</span>
-      </div>
-      <div className="col-total">
-        <span className="product-price">40</span
-        ><span className="product-currency currency">€</span>
-      </div>
-    </li>
-  </ul>
-);
+          <div className="col-total">
+            <span className="product-price">{cartItem.price * cartItem.quantity}</span>
+            <span className="product-currency currency">€</span>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};

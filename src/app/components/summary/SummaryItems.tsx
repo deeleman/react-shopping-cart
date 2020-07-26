@@ -1,11 +1,16 @@
 import React from 'react';
 
-export const SummaryItems: React.FunctionComponent = (props) => (
+interface SummaryItemsProps {
+  quantity: number;
+  subTotal: number;
+}
+
+export const SummaryItems: React.FunctionComponent<SummaryItemsProps> = (props) => (
   <ul className="summary-items wrapper border">
     <li>
-      <span className="summary-items-number">11 Items</span>
+      <span className="summary-items-number">{props.quantity} Items</span>
       <span className="summary-items-price">
-        120<span className="currency">€</span>
+        {props.subTotal}<span className="currency">€</span>
       </span>
     </li>
   </ul>

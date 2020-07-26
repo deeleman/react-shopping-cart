@@ -1,12 +1,22 @@
 import React from 'react';
+import { DiscountItem } from 'shopping-cart/types';
 
-export const SummaryDiscounts: React.FunctionComponent = (props) => (
-  <div className="summary-discounts wrapper-half border">
-    <h2>Discounts</h2>
-    <ul>
-      <li><span>2x1 Mug offer</span><span>-10€</span></li>
-      <li><span>x3 Shirt offer</span><span>-3€</span></li>
-      <li><span>Promo code</span><span>0€</span></li>
-    </ul>
-  </div>
-);
+interface SummaryDiscountsProps {
+  items: DiscountItem[];
+}
+
+export const SummaryDiscounts: React.FunctionComponent<SummaryDiscountsProps> = ({ items }) => {
+  const noDiscounts = (<li><span>No discounts applicable</span></li>);
+  const discountsItems = items.map((item, index) => (
+    <li key={index}><span>{item.name}</span><span>-{item.subTotal}€</span></li>
+  ));
+
+  return (
+    <div className="summary-discounts wrapper-half border">
+      <h2>Discounts</h2>
+      <ul>
+        { items && items.length > 0 ? discountsItems : noDiscounts }
+      </ul>
+    </div>
+  );
+};

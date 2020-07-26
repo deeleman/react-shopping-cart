@@ -3,7 +3,7 @@ import './App.scss';
 import { Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal } from './components';
 import { Checkout } from './models';
 import { dataService } from './services';
-import { CartItem, DiscountItem, PricingSettings } from './types';
+import { CartItem, DiscountItem, PricingSettings, ItemCode } from './types';
 
 interface AppProps {
   settings: PricingSettings,
@@ -39,6 +39,7 @@ export class App extends React.Component<AppProps, AppState> {
   componentDidMount(): void {
     dataService(this.props.settings).then((pricingRules) => {
       this.checkout = new Checkout(pricingRules);
+      this.setState({ isLoading: false });
       this.updateState();
     });
   }
@@ -46,28 +47,37 @@ export class App extends React.Component<AppProps, AppState> {
   render() {
     return (
       <main className="App">
-        <Products>
-          <ProductsList />
+        <Products isLoading={this.state.isLoading}>
+          <ProductsList items={this.state.cartItems} scan={this.scan} remove={this.remove} />
         </Products>
         <Summary>
-          <SummaryItems />
-          <SummaryDiscounts />
-          <SummaryTotal />
+          <SummaryItems quantity={this.state.orderedItemsQuantity} subTotal={this.state.subTotal} />
+          <SummaryDiscounts items={this.state.discountItems} />
+          <SummaryTotal isLoading={this.state.isLoading} total={this.state.total} />
         </Summary>
       </main>
     );
   };
 
+  scan = (itemCode: ItemCode, quantity?: number): void => {
+    this.checkout.scan(itemCode, quantity);
+    this.updateState();
+  }
+
+  remove = (itemCode: ItemCode): void => {
+    this.checkout.remove(itemCode);
+    this.updateState();
+  }
+
   private updateState(): void {
     const { cartItems, discountItems, subTotal, orderedItemsQuantity } = this.checkout;
 
-    this.setState((state) => ({
-      ...state,
+    this.setState({
       cartItems,
       orderedItemsQuantity,
       discountItems,
       subTotal,
       total: this.checkout.total(),
-    }));
+    });
   }
 };
