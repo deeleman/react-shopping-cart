@@ -42,7 +42,9 @@ export class DiscountsService {
     this.discountRules.forEach((discountRule) => {
       if (discountRule.eligibleItems.indexOf(cartItem.code) >= 0 && cartItem.quantity >= discountRule.minimumItems) {
         const discountItem = this.getDiscountItemByRule(cartItem, discountRule);
-        discountItems.push(discountItem);
+        if (discountItem.subTotal > 0) {
+          discountItems.push(discountItem);
+        }
       }
     });
 
@@ -60,11 +62,8 @@ export class DiscountsService {
         const subTotal = Math.round(cartItem.quantity * cartItem.price * discountRule.discount! * 100) / 100;
         return this.composeDiscountItem(discountRule, cartItem, subTotal);
       }
-        
-      case DiscountType.PromoCode: {
-        return this.composeDiscountItem(discountRule, cartItem);
-      }
 
+      case DiscountType.PromoCode:
       default: {
         return this.composeDiscountItem(discountRule, cartItem);
       }

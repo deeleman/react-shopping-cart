@@ -11,7 +11,7 @@
   },
   {
     "type": "promoCode",
-    "eligibleItems": [],
+    "eligibleItems": ["CAP"],
     "discount": 0,
     "minimumItems": 0,
     "code": ""
