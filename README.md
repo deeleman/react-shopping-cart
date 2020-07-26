@@ -13,7 +13,7 @@ As a first step to spawn a development environment or production build, please r
 ## Firing up a development environment
 You can spawn a development environment by running `yarn dev` or `npm run dev` in the console.
 
-The system will generate all the artifacts and assets and the compiled site will be available at http://localhost:9000 in _watch mode_, so the application will be recompiled upon changes on the source code.
+The system will generate all the artifacts and assets and the compiled site will be available at http://localhost:9000 in _watch mode_, so the application will be recompiled upon changes on the source code. On a side process, the `dev` command will spawn a test API exposing fixture data from http://localhost:8888.
 
 ## Building the project for production
 Please execute `yarn build` or `npm run build` in your terminal window. 

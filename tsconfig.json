@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["ES2017", "DOM"],
-    "target": "esnext",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -18,9 +18,9 @@
       "node_modules/@types"
     ],
     "outDir": "./dist",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@shopping-cart/*": ["app/*"]
+      "shopping-cart/*": ["./src/app/*"]
     }
   },
   "include": [
@@ -29,6 +29,7 @@
   "exclude": [
     "**/*.spec.ts",
     "node_modules",
-    "dist"
+    "dist",
+    "**/api/*.*"
   ]
 }

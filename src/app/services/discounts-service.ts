@@ -1,4 +1,4 @@
-import { CartItem, DiscountItem, DiscountRule, DiscountType, PricingRules } from '@shopping-cart/types';
+import { CartItem, DiscountItem, DiscountRule, DiscountType, PricingRules } from './../types';
 
 /**
  * The DiscountsService class provides a simple API to compute discounts applicable

@@ -7,8 +7,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "parcel src/index.html -p 9000",
-    "build": "rimraf ./dist && parcel build src/index.html",
+    "dev": "concurrently \"yarn dev:api\" \"yarn dev:parcel\"",
+    "dev:api": "node api-server.js",
+    "dev:parcel": "parcel src/index.html -p 9000",
+    "build": "rimraf ./dist && parcel build src/index.html --no-cache",
     "test": "jest --silent",
     "lint": "eslint src/**/*.ts --no-error-on-unmatched-pattern"
   },
@@ -16,6 +18,7 @@
     "promise-polyfill": "8.1.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "shopping-cart": "^1.0.4",
     "whatwg-fetch": "3.2.0"
   },
   "devDependencies": {
@@ -29,8 +32,12 @@
     "@typescript-eslint/eslint-plugin": "3.6.1",
     "@typescript-eslint/parser": "3.6.1",
     "babel-jest": "26.1.0",
+    "babel-polyfill": "6.26.0",
+    "concurrently": "5.2.0",
+    "cors": "2.8.5",
     "eslint": "7.4.0",
     "eslint-plugin-html": "6.0.2",
+    "express": "4.17.1",
     "jest": "26.1.0",
     "parcel-bundler": "1.12.4",
     "rimraf": "3.0.2",

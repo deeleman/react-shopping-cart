@@ -1,5 +1,5 @@
-import { DiscountsService } from '@shopping-cart/services';
-import { CartItem, DiscountItem, ItemCode, PricingRules } from '@shopping-cart/types';
+import { DiscountsService } from './../services';
+import { CartItem, DiscountItem, ItemCode, PricingRules } from './../types';
 import { CheckoutScanner, CheckoutTotal } from './checkout.types';
 
 /**

@@ -1,4 +1,4 @@
-import { ItemCode } from '@shopping-cart/types';
+import { ItemCode } from 'shopping-cart/types';
 
 export interface CheckoutScanner {
   scan: (itemCode: ItemCode, quantity?: number) => CheckoutScanner;

@@ -1,6 +1,6 @@
-import * as productDiscountFixtures from '@shopping-cart/api/fixtures/product-discounts';
-import * as productItemsFixtures from '@shopping-cart/api/fixtures/product-items';
-import { CartItem, DiscountRule, DiscountType, Item, ItemCode, PricingRules } from '@shopping-cart/types';
+import * as productDiscountFixtures from 'shopping-cart/api/fixtures/product-discounts';
+import * as productItemsFixtures from 'shopping-cart/api/fixtures/product-items';
+import { CartItem, DiscountRule, DiscountType, Item, ItemCode, PricingRules } from 'shopping-cart/types';
 import { DiscountsService } from './discounts-service';
 
 describe('DiscountsService', () => {

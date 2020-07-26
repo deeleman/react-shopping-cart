@@ -1,10 +1,10 @@
-import * as productDiscountFixtures from '@shopping-cart/api/fixtures/product-discounts';
-import * as productItemsFixtures from '@shopping-cart/api/fixtures/product-items';
-import { CartItem, DiscountRule, Item, ItemCode, PricingRules, DiscountType, DiscountItem } from '@shopping-cart/types';
+import * as productDiscountFixtures from 'shopping-cart/api/fixtures/product-discounts';
+import * as productItemsFixtures from 'shopping-cart/api/fixtures/product-items';
+import { CartItem, DiscountRule, Item, ItemCode, PricingRules, DiscountType, DiscountItem } from '../types';
 import { Checkout } from './checkout';
 
 let mockGetDiscountsByCartItem = jest.fn<DiscountItem[], [CartItem]>().mockReturnValue([]);
-jest.mock('@shopping-cart/services', () => ({
+jest.mock('shopping-cart/services', () => ({
   DiscountsService: jest.fn().mockImplementation(() => {
     return { getDiscountsByCartItem: mockGetDiscountsByCartItem };
   }),
