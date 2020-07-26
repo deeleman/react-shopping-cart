@@ -71,10 +71,9 @@ export class DiscountsService {
   }
 
   private composeDiscountItem(discountRule: DiscountRule, cartItem: CartItem, subTotal = 0): DiscountItem {
-    const cartItemName = cartItem.code.charAt(0).toUpperCase() + cartItem.code.slice(1).toLowerCase();
     const name = discountRule.type === DiscountType['2x1'] ? 
-      `2x1 ${cartItemName} offer` :
-      `x${discountRule.minimumItems} ${cartItemName} offer`;
+      `2x1 ${cartItem.shortName} offer` :
+      `x${discountRule.minimumItems} ${cartItem.shortName} offer`;
 
     return {
       type: discountRule.type,

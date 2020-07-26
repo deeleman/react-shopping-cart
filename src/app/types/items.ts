@@ -13,4 +13,5 @@ export interface Item {
 
 export interface CartItem extends Item {
   quantity: number;
+  shortName: string;
 }

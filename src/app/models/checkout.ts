@@ -24,7 +24,11 @@ export class Checkout implements CheckoutScanner, CheckoutTotal {
    * @param discounts Optional injectable DiscountsService dependency. If omitted, the Checkout model will internally instance its own with default settings
    */
   constructor(private readonly pricingRules: PricingRules, private readonly discountsService?: DiscountsService) {
-    this.cartItems = this.pricingRules.items.map((item) => ({ ...item, quantity: 0 }))
+    this.cartItems = this.pricingRules.items.map((item) => ({ 
+      ...item,
+      shortName: item.code.charAt(0).toUpperCase() + item.code.slice(1).toLowerCase(),
+      quantity: 0
+    }));
     this.discountsService = this.discountsService ?? new DiscountsService(pricingRules);
   }
 

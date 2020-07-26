@@ -6,13 +6,13 @@ import { DiscountsService } from './discounts-service';
 describe('DiscountsService', () => {
   let discountService: DiscountsService;
 
-  const mockMugCartItem: CartItem = { code: ItemCode.Mug, id: 'X2G2OPZ', name: 'Cabify Coffee Mug', quantity: 5, price: 5 };
+  const mockMugCartItem: CartItem = { code: ItemCode.Mug, id: 'X2G2OPZ', name: 'Cabify Coffee Mug', shortName: 'Mug', quantity: 5, price: 5 };
   const expectedMugDiscount = { type: DiscountType['2x1'], itemCode: ItemCode.Mug, name: '2x1 Mug offer', subTotal: 10 };
 
-  const mockShirtCartItem: CartItem = { code: ItemCode.TShirt, id: 'X7R2OPX', name: 'Cabify T-Shirt', quantity: 4, price: 20 };
+  const mockShirtCartItem: CartItem = { code: ItemCode.TShirt, id: 'X7R2OPX', name: 'Cabify T-Shirt', shortName: 'Shirt', quantity: 4, price: 20 };
   const expectedBulkShirtDiscount = { type: DiscountType.Bulk, itemCode: ItemCode.TShirt, name: 'x3 Shirt offer', subTotal: 4 };
 
-  const mockCapCartItem: CartItem = { code: ItemCode.Cap, id: 'X3W2OPY', name: 'Cabify Cap', quantity: 5, price: 10 };
+  const mockCapCartItem: CartItem = { code: ItemCode.Cap, id: 'X3W2OPY', name: 'Cabify Cap', shortName: 'Cap', quantity: 5, price: 10 };
   
   const pricingRules: PricingRules = {
     items: productItemsFixtures.default as Item[],
