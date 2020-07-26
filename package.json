@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"yarn dev:api\" \"yarn dev:parcel\"",
-    "dev:api": "node api-server.js",
+    "dev:api": "node api-dev-server.js",
     "dev:parcel": "parcel src/index.html -p 9000",
     "build": "rimraf ./dist && parcel build src/index.html --no-cache",
     "test": "jest --silent",
