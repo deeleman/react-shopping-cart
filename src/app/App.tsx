@@ -1,10 +1,9 @@
 import React from 'react';
-import { Checkout } from '../models';
-import { dataService } from '../services/data-service';
-import { CartItem, DiscountItem, PricingSettings } from './../types';
 import './App.scss';
-import { Products, ProductsList } from './products';
-import { Summary, SummaryDiscounts, SummaryItems, SummaryTotal } from './summary';
+import { Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal } from './components';
+import { Checkout } from './models';
+import { dataService } from './services';
+import { CartItem, DiscountItem, PricingSettings } from './types';
 
 interface AppProps {
   settings: PricingSettings,

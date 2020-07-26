@@ -1,3 +1,3 @@
 export * from '../settings';
-export { App } from './components';
+export { App } from './app';
 export { PricingSettings } from './types';
