@@ -5,7 +5,7 @@ import { httpService } from './http-service';
  * @param settings Key/value object mapping string keys to string URL endpoints
  * @returns T-typed hash map with keys matching those from {settings} mapped to API response objects
  */
-export const dataService = async <T extends Record<keyof T, unknown>>(settings: Record<keyof T, string>): Promise<T> => {
+export const dataService = async <T>(settings: Record<keyof T, string>): Promise<T> => {
   const keys = Object.keys(settings);
   const asynchttpServices = Object.values<string>(settings).map(httpService);
 
@@ -18,5 +18,5 @@ export const dataService = async <T extends Record<keyof T, unknown>>(settings: 
         ...{ [keys[index]]: response }
       }),
       {}
-    ) as T);
+    ) as unknown as T);
 };
