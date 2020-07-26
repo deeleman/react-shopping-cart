@@ -1,2 +1,2 @@
 export * from './checkout';
-export * from './types';
+export * from './checkout.types';

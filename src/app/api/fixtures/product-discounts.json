@@ -1,17 +1,19 @@
 [
   {
     "type": "2x1",
-    "eligibleItems": ["CAP"]
+    "eligibleItems": ["MUG"]
   },
   {
     "type": "bulk",
-    "eligibleItems": ["TSHIRT"],
-    "discount": 0.15,
+    "eligibleItems": ["SHIRT"],
+    "discount": 0.05,
     "minimumItems": 3
   },
   {
     "type": "promoCode",
     "eligibleItems": [],
-    "codeDiscounts": []
+    "discount": 0,
+    "minimumItems": 0,
+    "code": ""
   }
 ]

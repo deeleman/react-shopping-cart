@@ -1,5 +1,5 @@
 export enum ItemCode {
-  TShirt  = 'TSHIRT',
+  TShirt  = 'SHIRT',
   Mug     = 'MUG',
   Cap     = 'CAP'
 }
@@ -13,12 +13,4 @@ export interface Item {
 
 export interface CartItem extends Item {
   quantity: number;
-}
-
-export type PricingRules = {
-  items: Item[];
-}
-
-export interface ItemScanner {
-  scan: (itemCode: ItemCode, quantity?: number) => ItemScanner;
 }

@@ -1,16 +1,26 @@
-import * as productItemsFixtures from '@shopping-cart/api/fixtures/product-items.json';
-
+import * as productDiscountFixtures from '@shopping-cart/api/fixtures/product-discounts';
+import * as productItemsFixtures from '@shopping-cart/api/fixtures/product-items';
+import { CartItem, DiscountRule, Item, ItemCode, PricingRules, DiscountType, DiscountItem } from '@shopping-cart/types';
 import { Checkout } from './checkout';
-import { PricingRules, Item, ItemCode } from './types'
+
+let mockGetDiscountsByCartItem = jest.fn<DiscountItem[], [CartItem]>().mockReturnValue([]);
+jest.mock('@shopping-cart/services', () => ({
+  DiscountsService: jest.fn().mockImplementation(() => {
+    return { getDiscountsByCartItem: mockGetDiscountsByCartItem };
+  }),
+}));
 
 describe('Checkout', () => {
   let checkout: Checkout;
 
   const pricingRules: PricingRules = {
-    items: productItemsFixtures.default as Item[]
+    items: productItemsFixtures.default as Item[],
+    discountRules: productDiscountFixtures.default as DiscountRule[],
   };
 
   beforeEach(() => checkout = new Checkout(pricingRules));
+
+  afterEach(mockGetDiscountsByCartItem.mockClear);
 
   describe('upon instantiating', () => {
     it('should return a valid object instance', () => {
@@ -63,7 +73,7 @@ describe('Checkout', () => {
       expect(checkout.subTotal)
         .toEqual(5.00);
     });
-  
+
     it('should add distinct items to cart by chain-scanning different item codes', () => {
       checkout.scan(ItemCode.Mug).scan(ItemCode.Cap).scan(ItemCode.TShirt);
 
@@ -84,7 +94,7 @@ describe('Checkout', () => {
       expect(checkout.orderedItemsQuantity)
         .toEqual(3);
     });
-  
+
     it('should add several units of same item to cart by chain-scanning the same item code multiple times', () => {
       checkout.scan(ItemCode.Mug).scan(ItemCode.Mug).scan(ItemCode.Mug);
 
@@ -103,7 +113,7 @@ describe('Checkout', () => {
       expect(checkout.orderedItemsQuantity)
         .toEqual(3);
     });
-  
+
     it('should add several units of different items to cart by scanning multiple item codes separately', () => {
       checkout.scan(ItemCode.Mug);
       checkout.scan(ItemCode.TShirt);
@@ -127,7 +137,7 @@ describe('Checkout', () => {
       expect(checkout.orderedItemsQuantity)
         .toEqual(4);
     });
-  
+
     it('should add several units of same item to cart by scanning same item code multiple times separately', () => {
       checkout.scan(ItemCode.Mug);
       checkout.scan(ItemCode.Mug);
@@ -161,12 +171,12 @@ describe('Checkout', () => {
           { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 1 },
         ]);
 
-        expect(checkout.orderedItems)
-          .toEqual([
-            { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', price: 20.00, quantity: 1 },
-            { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', price: 5.00, quantity: 1 },
-            { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 1 },
-          ]);
+      expect(checkout.orderedItems)
+        .toEqual([
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', price: 5.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 1 },
+        ]);
 
       expect(checkout.orderedItemsQuantity)
         .toEqual(3);
@@ -185,11 +195,11 @@ describe('Checkout', () => {
           { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 2 },
         ]);
 
-        expect(checkout.orderedItems)
-          .toEqual([
-            { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', price: 20.00, quantity: 1 },
-            { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 2 },
-          ]);
+      expect(checkout.orderedItems)
+        .toEqual([
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', price: 20.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 2 },
+        ]);
 
       expect(checkout.orderedItemsQuantity)
         .toEqual(3);
@@ -208,11 +218,11 @@ describe('Checkout', () => {
           { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 2 },
         ]);
 
-        expect(checkout.orderedItems)
-          .toEqual([
-            { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', price: 20.00, quantity: 1 },
-            { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 2 },
-          ]);
+      expect(checkout.orderedItems)
+        .toEqual([
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', price: 20.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00, quantity: 2 },
+        ]);
 
       expect(checkout.orderedItemsQuantity)
         .toEqual(3);
@@ -301,5 +311,54 @@ describe('Checkout', () => {
       expect(checkout.orderedItemsQuantity)
         .toEqual(0);
     });
+  });
+
+  describe('upon providing applicable discounts', () => {
+    const mockMugCartItem: CartItem = { code: ItemCode.Mug, id: 'X2G2OPZ', name: 'Cabify Coffee Mug', quantity: 2, price: 5 };
+    const mockMugDiscount = { type: DiscountType['2x1'], itemCode: ItemCode.Mug, name: '2x1 Mug offer', subTotal: 5 };
+    const mockShirtCartItem: CartItem = { code: ItemCode.TShirt, id: 'X7R2OPX', name: 'Cabify T-Shirt', quantity: 3, price: 20 };
+    const mockBulkShirtDiscount = { type: DiscountType.Bulk, itemCode: ItemCode.TShirt, name: 'x3 Shirt offer', subTotal: 3 };
+
+    it('should initialize with no discounts', () => {
+      expect(checkout.discountItems).toEqual([]);
+    });
+
+    it('should compute applicable discounts upon scanning product items', () => {
+      mockGetDiscountsByCartItem
+        .mockImplementationOnce(() =>[mockMugDiscount])
+        .mockImplementationOnce(() =>[mockBulkShirtDiscount]);
+
+      checkout.scan(ItemCode.Mug, 2).scan(ItemCode.TShirt, 3);
+      
+      expect(mockGetDiscountsByCartItem).toHaveBeenCalledTimes(2);
+      expect(mockGetDiscountsByCartItem).toHaveBeenCalledWith<[CartItem]>(mockMugCartItem);
+      expect(mockGetDiscountsByCartItem).toHaveBeenCalledWith<[CartItem]>(mockShirtCartItem);
+      expect(checkout.discountItems).toEqual([mockMugDiscount, mockBulkShirtDiscount]);
+    });
+
+    it('should recompute applicable discounts upon removing product items', () => {
+      mockGetDiscountsByCartItem
+        .mockImplementationOnce(() =>[mockMugDiscount])
+        .mockImplementationOnce(() =>[mockBulkShirtDiscount])
+        .mockImplementationOnce(() =>[]);
+
+      checkout.scan(ItemCode.Mug, 2).scan(ItemCode.TShirt, 3);
+      checkout.remove(ItemCode.Mug);
+
+      expect(mockGetDiscountsByCartItem).toHaveBeenCalledTimes(3);
+      expect(checkout.discountItems).toEqual([mockBulkShirtDiscount]);
+    });
+
+    it('should deduct applicable discounts from total', () => {
+      mockGetDiscountsByCartItem
+        .mockImplementationOnce(() =>[mockMugDiscount])
+        .mockImplementationOnce(() =>[mockBulkShirtDiscount]);
+
+      checkout.scan(ItemCode.Mug, 2).scan(ItemCode.TShirt, 3);
+
+      // Expected total computation: 5.00 + 5.00 + 20.00 + 20.00 + 20.00 - 5.00 - 3.00
+      expect(checkout.total()).toEqual(62);
+    });
+
   });
 });
