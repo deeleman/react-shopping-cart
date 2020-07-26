@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url("../img/background.png");
+  background-color: #212240;
+  background-position: top left;
+  background-size: cover;
+  font-family: Avenir, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: regular;
+}
+
+h1 {
+  position: relative;
+  letter-spacing: -0.18px;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+h2 {
+  color: #717285;
+  letter-spacing: 0;
+  font-weight: 300;
+}
+
+h2 + * {
+  margin-top: 16px;
+}

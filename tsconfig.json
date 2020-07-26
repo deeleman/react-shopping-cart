@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["ES2017", "DOM"],
-    "target": "es5",
+    "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
@@ -12,14 +12,20 @@
     "downlevelIteration": true,
     "declaration": true,
     "esModuleInterop": true,
-    "strict": true, 
-    "types": ["jest", "node"],
+    "strict": true,
+    "jsx": "react",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
       "@shopping-cart/*": ["app/*"]
     }
   },
+  "include": [
+    "./src/**/*"
+  ],
   "exclude": [
     "**/*.spec.ts",
     "node_modules",
