@@ -11,4 +11,3 @@ describe('Summary', () => {
     expect(getByTestId('child-element').textContent).toEqual('Mock children element');
   });
 });
-

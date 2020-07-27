@@ -27,4 +27,3 @@ describe('SummaryDiscounts', () => {
     expect(getAllByRole('listitem')[1].textContent).toContain('-4 €');
   });
 });
-

@@ -32,6 +32,4 @@ describe('Products', () => {
     expect(getByTestId('child-element')).toBeInTheDocument();
     expect(getByTestId('child-element').textContent).toEqual('Mock children element');
   });
-
-
 });

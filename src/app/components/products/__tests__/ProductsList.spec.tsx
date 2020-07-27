@@ -85,6 +85,4 @@ describe('ProductsList', () => {
     expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.Cap, 0);
     scanHandlerStub.mockClear();
   });
-
 });
-
