@@ -1,10 +1,10 @@
 import * as productItemsFixtures from 'shopping-cart/api/fixtures/product-items';
 import * as productDiscountFixtures from 'shopping-cart/api/fixtures/product-discounts';
 
-import { httpService } from './http-service';
-import { dataService } from './data-service';
+import { httpService } from '../http-service';
+import { dataService } from '../data-service';
 
-jest.mock('./http-service', () => ({ httpService: jest.fn() }));
+jest.mock('../http-service', () => ({ httpService: jest.fn() }));
 
 describe('dataService', () => {
   const itemsEndpointUrlMock     = 'https://test.dev/api/v1/items';

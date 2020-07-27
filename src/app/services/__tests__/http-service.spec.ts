@@ -1,5 +1,5 @@
-import { httpService } from './http-service';
 import * as productItemsFixtures from 'shopping-cart/api/fixtures/product-items';
+import { httpService } from '../http-service';
 
 describe('httpService', () => {
   let fetchSpy: jest.SpyInstance<Promise<unknown>>;
