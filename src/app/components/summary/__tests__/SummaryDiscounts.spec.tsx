@@ -9,23 +9,22 @@ describe('SummaryDiscounts', () => {
   const bulkShirtDiscountMock = { type: DiscountType.Bulk, itemCode: ItemCode.TShirt, name: 'x3 Shirt offer', subTotal: 4 };
 
   it('should display a "No discounts..." fallback text if no items are provided', () => {
-    const { getByText } = render(<SummaryDiscounts />);
-    expect(getByText('No discounts applicable')).toBeInTheDocument();
+    const { getByRole } = render(<SummaryDiscounts />);
+    expect(getByRole('listitem').textContent).toContain('No discounts applicable');
   });
 
   it('should display a "No discounts..." fallback text if discounts provided are empty', () => {
-    const { getByText } = render(<SummaryDiscounts items={[]} />);
-    expect(getByText('No discounts applicable')).toBeInTheDocument();
+    const { getByRole } = render(<SummaryDiscounts items={[]} />);
+    expect(getByRole('listitem').textContent).toContain('No discounts applicable');
   });
 
-  it('should display an itemized list matching discounts provided', async () => {
+  it('should display an itemized list matching discounts provided', () => {
     const discountItemsMock = [mugDiscountMock, bulkShirtDiscountMock];
-    const { getByText, findAllByText } = render(<SummaryDiscounts items={discountItemsMock} />);
-    const items = await findAllByText(/offer/i);
+    const { getAllByRole } = render(<SummaryDiscounts items={discountItemsMock} />);
 
-    expect(items).toHaveLength(2);
-    expect(getByText('-10€')).toBeInTheDocument();
-    expect(getByText('-4€')).toBeInTheDocument();
+    expect(getAllByRole('listitem')).toHaveLength(2);
+    expect(getAllByRole('listitem')[0].textContent).toContain('-10€');
+    expect(getAllByRole('listitem')[1].textContent).toContain('-4€');
   });
 });
 

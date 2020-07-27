@@ -6,9 +6,9 @@ interface SummaryDiscountsProps {
 }
 
 export const SummaryDiscounts: React.FunctionComponent<SummaryDiscountsProps> = ({ items }) => {
-  const noDiscounts = (<li><span>No discounts applicable</span></li>);
+  const noDiscounts = (<li role="listitem"><span>No discounts applicable</span></li>);
   const discountsItems = items!.map((item, index) => (
-    <li key={index}>
+    <li key={index} role="listitem">
       <span>{item.name}</span>
       <span>-{item.subTotal}€</span>
     </li>
@@ -17,7 +17,7 @@ export const SummaryDiscounts: React.FunctionComponent<SummaryDiscountsProps> = 
   return (
     <div className="summary-discounts wrapper-half border">
       <h2>Discounts</h2>
-      <ul>
+      <ul role="list">
         { items!.length > 0 ? discountsItems : noDiscounts }
       </ul>
     </div>
