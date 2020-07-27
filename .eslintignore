@@ -1,10 +1,14 @@
 /build/**
+/dist/**
+/src/api/**
 /coverage/**
 /docs/**
 /jsdoc/**
 /test**
+/src/**/__test__/**
 /tmp/**
 /node_modules/**
+/src/favicon.ico
 /src/favicon.png
 /coverage/**
 !.eslintrc.js
