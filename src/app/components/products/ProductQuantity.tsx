@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ProductQuantityProps {
-  quantity: number;
+  quantity?: number;
   add: () => void;
   remove: () => void;
   edit: (quantity: number) => void;
@@ -19,3 +19,5 @@ export const ProductQuantity: React.FunctionComponent<ProductQuantityProps> = ({
     <button className="count" onClick={() => add()}>+</button>
   </React.Fragment>
 );
+
+ProductQuantity.defaultProps = { quantity: 0 };
