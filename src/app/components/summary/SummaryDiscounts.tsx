@@ -10,7 +10,7 @@ export const SummaryDiscounts: React.FunctionComponent<SummaryDiscountsProps> = 
   const discountsItems = items!.map((item, index) => (
     <li key={index} role="listitem">
       <span>{item.name}</span>
-      <span>-{item.subTotal}€</span>
+      <span>-{item.subTotal} €</span>
     </li>
   ));
 

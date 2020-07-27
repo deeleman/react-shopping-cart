@@ -23,8 +23,8 @@ describe('SummaryDiscounts', () => {
     const { getAllByRole } = render(<SummaryDiscounts items={discountItemsMock} />);
 
     expect(getAllByRole('listitem')).toHaveLength(2);
-    expect(getAllByRole('listitem')[0].textContent).toContain('-10€');
-    expect(getAllByRole('listitem')[1].textContent).toContain('-4€');
+    expect(getAllByRole('listitem')[0].textContent).toContain('-10 €');
+    expect(getAllByRole('listitem')[1].textContent).toContain('-4 €');
   });
 });
 
