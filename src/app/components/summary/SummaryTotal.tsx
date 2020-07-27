@@ -13,7 +13,7 @@ export const SummaryTotal: React.FunctionComponent<SummaryTotalProps> = ({ total
         <span className="summary-total-price">{total}€</span>
       </li>
     </ul>
-    <button type="submit" disabled={isLoading}>Checkout</button>
+    <button role="button" type="submit" disabled={isLoading}>Checkout</button>
   </div>
 );
 
