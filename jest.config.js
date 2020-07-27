@@ -27,7 +27,8 @@ module.exports = {
   coveragePathIgnorePatterns: [
     "/node_modules/",
     "/src/api/",
-    "/src/app/types/"
+    "/src/app/types/",
+    "index.ts",
   ],
 
   // Indicates which provider should be used to instrument code for coverage
