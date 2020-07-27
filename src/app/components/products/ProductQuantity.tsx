@@ -9,14 +9,14 @@ interface ProductQuantityProps {
 
 export const ProductQuantity: React.FunctionComponent<ProductQuantityProps> = ({ quantity, add, remove, edit }) => (
   <React.Fragment>
-    <button className="count" onClick={() => remove()}>-</button>
-    <input 
+    <button aria-label="remove" className="count" onClick={() => remove()}>-</button>
+    <input aria-label="count"
       type="number"
       className="product-quantity"
       value={quantity}
       onChange={(e) => edit(parseInt(e.target.value, 10))}
     />
-    <button className="count" onClick={() => add()}>+</button>
+    <button aria-label="add" className="count" onClick={() => add()}>+</button>
   </React.Fragment>
 );
 
