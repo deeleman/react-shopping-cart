@@ -102,6 +102,8 @@ export class Checkout implements CheckoutScanner, CheckoutTotal {
         ...this.cartItems[itemIndex],
         quantity,
       };
+    } else {
+      throw new Error(`Could not find a product with code "${itemCode}"`);
     }
   }
 
