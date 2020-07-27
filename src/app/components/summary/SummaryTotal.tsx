@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface SummaryTotalProps {
-  total: number;
+  total?: number;
   isLoading: boolean;
 }
 
@@ -16,3 +16,5 @@ export const SummaryTotal: React.FunctionComponent<SummaryTotalProps> = ({ total
     <button type="submit" disabled={isLoading}>Checkout</button>
   </div>
 );
+
+SummaryTotal.defaultProps = { total: 0 };
