@@ -9,13 +9,13 @@ jest.mock('./../../../../img');
 describe('ProductsList', () => {
   const scanHandlerStub = jest.fn();
   const removeHandlerStub = jest.fn();
-  const cartItems: CartItem[] = [
+  const cartItemsMock: CartItem[] = [
     { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 },
     { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
     { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 3 },
   ];
 
-  const setupTest = (items = cartItems) => render(
+  const setupTest = (items = cartItemsMock) => render(
     <ProductsList items={items} scan={scanHandlerStub} remove={removeHandlerStub} />
   );
 
