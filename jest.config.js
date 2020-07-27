@@ -81,6 +81,7 @@ module.exports = {
   moduleNameMapper: {
     '^shopping-cart\/api\/fixtures\/(.*)$': '<rootDir>/api/fixtures/$1.json',
     '^shopping-cart\/(.*)$': '<rootDir>/app/$1',
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
