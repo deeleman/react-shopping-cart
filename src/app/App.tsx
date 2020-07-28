@@ -2,8 +2,8 @@ import React from 'react';
 import './App.scss';
 import { Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal } from './components';
 import { Checkout } from './models';
-import { dataService } from './services';
-import { CartItem, DiscountItem, PricingSettings, ItemCode } from './types';
+import { dataService } from './services/data-service';
+import { CartItem, DiscountItem, ItemCode, PricingSettings, PricingRules } from './types';
 
 interface AppProps {
   settings: PricingSettings,
@@ -36,15 +36,14 @@ export class App extends React.Component<AppProps, AppState> {
     };
   }
 
-  componentDidMount(): void {
-    dataService(this.props.settings).then((pricingRules) => {
-      this.checkout = new Checkout(pricingRules);
-      this.setState({ isLoading: false });
-      this.updateState();
-    });
+  async componentDidMount(): Promise<void> {
+    const pricingRules = await dataService<PricingRules>(this.props.settings);
+    this.checkout = new Checkout(pricingRules);
+    this.setState({ isLoading: false });
+    this.updateState();
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <main className="App">
         <Products isLoading={this.state.isLoading}>

@@ -1,4 +1,4 @@
-import { Item, ItemCode } from 'shopping-cart/types';
+import { Item, ItemCode, DiscountRule, DiscountType } from 'shopping-cart/types';
 
 export const dataService = async <T>(settings: Record<keyof T, string>): Promise<T> => {
   const itemsMock: Item[] = [
@@ -7,9 +7,9 @@ export const dataService = async <T>(settings: Record<keyof T, string>): Promise
     { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', price: 10.00 },
   ];
   
-  const discountRulesMock = [
-    { type: '2x1', itemCode: ItemCode.Mug, name: '2x1 Mug offer', subTotal: 10 },
-    { type: 'bulk', itemCode: ItemCode.TShirt, name: 'x3 Shirt offer', subTotal: 4 },
+  const discountRulesMock: Partial<DiscountRule>[] = [
+    { type: DiscountType['2x1'], eligibleItems: [ItemCode.Mug] },
+    { type: DiscountType.Bulk, eligibleItems: [ItemCode.TShirt], discount: 0.05, minimumItems: 3 }
   ];
   
   return Promise
