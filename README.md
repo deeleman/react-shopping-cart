@@ -1,14 +1,13 @@
 # Frontend Shopping Cart
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3015988c-0069-4d65-8e29-4a7e3ceaa9c5/deploy-status)](https://app.netlify.com/sites/deeleman-cabify-challenge/deploys)
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+[![Website deeleman-cabify-challenge.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-cabify-challenge.netlify.app.svg)](https://deeleman-cabify-challenge.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3015988c-0069-4d65-8e29-4a7e3ceaa9c5/deploy-status)](https://app.netlify.com/sites/deeleman-cabify-challenge/deploys)
 
 Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of TypeScript and React.
 
-![Example image](./static/docs/example.png?raw=true)
-
-[![Website deeleman-cabify-challenge.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-cabify-challenge.netlify.app.svg)](https://deeleman-cabify-challenge.netlify.app)
-
 A **live running build** of this project is available at https://deeleman-cabify-challenge.netlify.app.
+
+![Example image](./static/docs/example.png?raw=true)
 
 ## Setting up your environment
 The minimum requirements for running this project, either on development or production mode, and its development scripts are `node v12.16.0` and `npm v.6.14.15`, or later versions. Probably this project will run seamlessly on older versions of `node` and `npm` but we recommend using the latest [LTS versions](https://nodejs.org/).
