@@ -10,7 +10,7 @@
     "dev": "parcel src/index.html -p 9000",
     "build": "rimraf ./dist && parcel build src/index.html --no-cache",
     "test": "jest --silent",
-    "lint": "eslint src/**/*.ts --no-error-on-unmatched-pattern"
+    "lint": "eslint --ext .ts --ext .tsx src"
   },
   "dependencies": {
     "react": "16.13.1",
@@ -35,6 +35,7 @@
     "babel-polyfill": "6.26.0",
     "eslint": "7.4.0",
     "eslint-plugin-html": "6.0.2",
+    "eslint-plugin-react": "7.20.5",
     "identity-obj-proxy": "3.0.0",
     "jest": "26.1.0",
     "parcel-bundler": "1.12.4",

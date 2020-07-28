@@ -17,7 +17,7 @@ interface AppState {
   total: number;
   isLoading: boolean;
   selectedItem?: CartItem;
-};
+}
 
 export class App extends React.Component<AppProps, AppState> {
   readonly state: AppState;
@@ -58,7 +58,7 @@ export class App extends React.Component<AppProps, AppState> {
         </Summary>
       </main>
     );
-  };
+  }
 
   scan = (itemCode: ItemCode, quantity?: number): void => {
     this.checkout.scan(itemCode, quantity);
@@ -85,4 +85,4 @@ export class App extends React.Component<AppProps, AppState> {
       total: this.checkout.total(),
     });
   }
-};
+}

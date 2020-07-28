@@ -11,8 +11,8 @@ interface ProductModalProps {
 }
 
 export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ cartItem, scan, close }) => {
-  const scanItemHandler = (cartItem: CartItem) => {
-    scan(cartItem.code);
+  const scanItemHandler = (cartItemMock: CartItem) => {
+    scan(cartItemMock.code);
     close();
   };
 
@@ -20,7 +20,10 @@ export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ cartI
     ? ReactDOM.createPortal(
       <div className="modal" role="dialog">
         <figure className="modal__image">
-          <img role="img" src={images[`${cartItem.shortName.toLowerCase()}Large`] || images['fallbackLarge']} alt={cartItem.shortName} />
+          <img
+            role="img"
+              src={images[`${cartItem.shortName.toLowerCase()}Large`] || images['fallbackLarge']} alt={cartItem.shortName}
+          />
         </figure>
         <aside className="modal__description">
           <h3 className="modal__description-name-price">

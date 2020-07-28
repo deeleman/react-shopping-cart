@@ -1,6 +1,6 @@
 import { Item, ItemCode, DiscountRule, DiscountType } from 'shopping-cart/types';
 
-export const dataService = async <T>(settings: Record<keyof T, string>): Promise<T> => {
+export const dataService = async <T>(): Promise<T> => {
   const itemsMock: Item[] = [
     { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', price: 20.00 },
     { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', price: 5.00 },

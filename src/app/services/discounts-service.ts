@@ -59,6 +59,7 @@ export class DiscountsService {
       }
 
       case DiscountType.Bulk: {
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         const subTotal = Math.round(cartItem.quantity * cartItem.price * discountRule.discount! * 100) / 100;
         return this.composeDiscountItem(discountRule, cartItem, subTotal);
       }

@@ -108,7 +108,7 @@ export class Checkout implements CheckoutScanner, CheckoutTotal {
   }
 
   private updateDiscountsByItemCode(itemCode: ItemCode): void {
-    const cartItem = this.cartItems.find((cartItem) => cartItem.code === itemCode);
+    const cartItem = this.cartItems.find((item) => item.code === itemCode);
     const previousDiscounts = this.discountItems.filter((discountItem) => discountItem.itemCode !== itemCode);
     let updatedDiscounts: DiscountItem[] = [];
 
