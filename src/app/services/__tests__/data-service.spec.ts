@@ -1,5 +1,5 @@
-import * as productItemsFixtures from 'shopping-cart/api/fixtures/product-items';
-import * as productDiscountFixtures from 'shopping-cart/api/fixtures/product-discounts';
+import * as productItemsFixtures from 'shopping-cart-api/fixtures/product-items';
+import * as productDiscountFixtures from 'shopping-cart-api/fixtures/product-discounts';
 
 import { httpService } from '../http-service';
 import { dataService } from '../data-service';

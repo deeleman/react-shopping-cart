@@ -80,8 +80,8 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '^shopping-cart\/api\/fixtures\/(.*)$': '<rootDir>/api/fixtures/$1.json',
-    '^shopping-cart\/(.*)$': '<rootDir>/app/$1',
+    '^shopping-cart-api\/fixtures\/(.*)$': '<rootDir>/public/api/fixtures/$1.json',
+    '^shopping-cart\/(.*)$': '<rootDir>/src/app/$1',
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
   },
 
@@ -116,7 +116,7 @@ module.exports = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  rootDir: './src',
+  rootDir: './',
 
   // A list of paths to directories that Jest should use to search for files in
   roots: [
