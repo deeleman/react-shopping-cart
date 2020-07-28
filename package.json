@@ -44,7 +44,8 @@
     "typescript": "3.9.6"
   },
   "staticFiles": {
-    "staticPath": "public",
-    "watcherGlob": "**"
+    "staticPath": "static",
+    "watcherGlob": "**",
+    "excludeGlob": ["docs", "docs/**"]
   }
 }

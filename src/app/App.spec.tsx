@@ -4,7 +4,7 @@ import React from 'react';
 import { PricingSettings } from 'shopping-cart/types';
 import { App } from '../App';
 
-jest.mock('./../img');
+jest.mock('./../img/items');
 jest.mock('./services/data-service');
 
 describe('App', () => {

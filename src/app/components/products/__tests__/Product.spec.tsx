@@ -3,7 +3,7 @@ import { render, screen, cleanup } from '@testing-library/react';
 import React from 'react';
 import { Product } from '../Product';
 
-jest.mock('./../../../../img');
+jest.mock('./../../../../img/items');
 
 describe('Product', () => {
   beforeEach(() => render(<Product shortName={'Mug'} code={'X2G2OPZ'} />));

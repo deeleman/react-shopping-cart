@@ -4,7 +4,7 @@ import React from 'react';
 import { CartItem, ItemCode } from 'shopping-cart/types';
 import { ProductsList } from '../ProductsList';
 
-jest.mock('./../../../../img');
+jest.mock('./../../../../img/items');
 
 describe('ProductsList', () => {
   const scanHandlerStub = jest.fn();

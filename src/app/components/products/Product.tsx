@@ -1,5 +1,5 @@
 import React from 'react';
-import { images } from './../../../img';
+import { images } from './../../../img/items';
 
 interface ProductProps {
   shortName: string;

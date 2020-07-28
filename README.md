@@ -2,6 +2,8 @@
 
 Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of TypeScript and React.
 
+![Example image](./static/docs/example.png?raw=true)
+
 ## Setting up your environment
 The minimum requirements for running this project, either on development or production mode, and its development scripts are `node v12.16.0` and `npm v.6.14.15`, or later versions. Probably this project will run seamlessly on older versions of `node` and `npm` but we recommend using the latest [LTS versions](https://nodejs.org/).
 
@@ -24,7 +26,7 @@ You will want to rebuild the project after updating these settings, although thi
 
 #### Type schemas to abide when configuring custom API endpoints
 
-The application comes preconfigured wih testing URLs pointing to local JSON resources. In case you want to switch to other third-party API endpoints of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the `public/api/fixtures` folder.
+The application comes preconfigured wih testing URLs pointing to local JSON resources. In case you want to switch to other third-party API endpoints of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the `static/api/fixtures` folder.
 
 ## Firing up a development environment
 You can spawn a development environment by running `yarn dev` or `npm run dev` in the console.
