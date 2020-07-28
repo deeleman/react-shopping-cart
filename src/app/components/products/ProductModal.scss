@@ -1,7 +1,7 @@
 @import '~src/sass/toolkit';
 
 .modal {
-  @include center-container(1416, 840);
+  @include center-container(1416px, 840px);
   background-color: getTheme('backgroundContainer');
   animation: overlayIn .3s ease-in-out;
 
