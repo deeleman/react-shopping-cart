@@ -12,7 +12,7 @@ As a first step to spawn a development environment or production build, please r
 
 ### Configuring the project settings
 
-> **Please note**: This step is optional if you aim to run the application in dev mode only. The project is shipped with all settings preconfigured by default so you can leverage data fixtures already baked into the server environment. Feel free to skip to the next section if you do not want to customize your data preferences.
+> **Please note**: This step is optional if you aim to run the application in dev mode only. The project is shipped with all settings preconfigured by default so you can leverage data fixtures already baked into the development server environment. Feel free to skip to the next section if you do not want to customize your data preferences.
 
 The project is designed to require all data regarding products and discounts rules to be fetched from a given REST API. Particularly, the project will fetch the information required to configure a full product catalogue and the pricing rules that dictate what discounts might apply to the ongoing order.
 
@@ -22,7 +22,9 @@ You can update this setup by accessing `/src/settings.ts` and editing the follow
 
 You will want to rebuild the project after updating these settings, although this action will be automatically triggered by Parcel when running the application in development mode.
 
-The application comes preconfigured wih testing URLs pointing to local JSON resources. In case you want to switch to other third-party API endpoints of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. 
+#### Type schemas to abide when configuring custom API endpoints
+
+The application comes preconfigured wih testing URLs pointing to local JSON resources. In case you want to switch to other third-party API endpoints of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the `public/api/fixtures` folder.
 
 ## Firing up a development environment
 You can spawn a development environment by running `yarn dev` or `npm run dev` in the console.
