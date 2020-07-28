@@ -26,7 +26,10 @@ You will want to rebuild the project after updating these settings, although thi
 
 #### Type schemas to abide when configuring custom API endpoints
 
-The application comes preconfigured wih testing URLs pointing to local JSON resources. In case you want to switch to other third-party API endpoints of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the `static/api/fixtures` folder.
+The application comes preconfigured wih testing URLs pointing to local JSON resources. In case you want to switch to other third-party API endpoints of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](static/api/fixtures) folder.
+
+#### Color themes
+The overall aplication color palette have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss);
 
 ## Firing up a development environment
 You can spawn a development environment by running `yarn dev` or `npm run dev` in the console.

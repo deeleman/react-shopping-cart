@@ -2,11 +2,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: url(getTheme('backgroundImage'));
-  background-color: getTheme('background');
+  background-image: url($appBackgroundImage);
+  background-color: getTheme('mainBackgroundColor');
   background-position: top left;
   background-size: cover;
-  @extend %fontFamily;
+  font-family: $appFontsFamily;
+  font-weight: regular;
 }
 
 h1 {

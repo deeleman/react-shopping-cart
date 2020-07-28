@@ -1,0 +1,6 @@
+@use 'sass:map';
+
+// Theme variable getter helper
+@function getTheme($element) {
+  @return map.get($theme, $element);
+}

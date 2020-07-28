@@ -1,4 +1,5 @@
 import React from 'react';
+import './SummaryTotal.scss';
 
 interface SummaryTotalProps {
   total?: number;

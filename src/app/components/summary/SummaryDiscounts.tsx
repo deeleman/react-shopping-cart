@@ -1,5 +1,6 @@
 import React from 'react';
 import { DiscountItem } from 'shopping-cart/types';
+import './SummaryDiscounts.scss';
 
 interface SummaryDiscountsProps {
   items?: DiscountItem[];

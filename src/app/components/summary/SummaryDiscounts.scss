@@ -1,0 +1,9 @@
+@import '~src/sass/toolkit';
+
+.wrapper-half {
+  padding: 24px 0;
+
+  &.border {
+    @include summary-block;
+  }
+}

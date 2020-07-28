@@ -1,0 +1,36 @@
+@import '~src/sass/toolkit';
+
+.summary {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 40px 32px;
+  width: 312px;
+  background-color: getTheme('summaryBackground');
+  color: getTheme('summaryTextColor');
+
+  > * {
+    width: 100%;
+  }
+
+  ul li {
+    @include medium-small-text;
+    display: flex;
+    justify-content: space-between;
+  
+    > *:nth-child(2) {
+      font-weight: bold;
+    }
+  
+    & + li {
+      margin-top: 20px;
+    }
+  }
+
+  .wrapper {
+    padding: 32px 0;
+
+    &.border {
+      @include summary-block;
+    }
+  }
+}

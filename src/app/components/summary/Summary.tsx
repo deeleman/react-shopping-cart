@@ -1,4 +1,5 @@
 import React from 'react';
+import './Summary.scss';
 
 export const Summary: React.FunctionComponent = (props) => (
   <aside className="summary">
