@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
 import { PricingSettings } from 'shopping-cart/types';
-import { App } from '../App';
+import { App } from './App';
 
 jest.mock('./../img/items');
 jest.mock('./services/data-service');
