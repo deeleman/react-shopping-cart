@@ -1,0 +1,21 @@
+@import '~src/sass/toolkit';
+
+button.count {
+  @include large-text;
+  padding: 0 8px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: getTheme('quantityButton');
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-quantity {
+  @include medium-small-text;
+  width: 40px;
+  height: 40px;
+  border: 2px solid getTheme('quantityInput');
+  border-radius: 4px;
+  text-align: center;
+}

@@ -1,17 +1,6 @@
-@import '~src/sass/theme';
+@import '~src/sass/toolkit';
 
 .App {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-width: 1088px;
-  max-height: 648px;
-  width: calc(100% - 64px);
-  height: calc(100% - 64px);
-  border-radius: 4px;
-  background-color: getTheme('background');
-  transform: translate(-50%, -50%);
+  @include center-container();
+  background-color: getTheme('backgroundContainer');
 }

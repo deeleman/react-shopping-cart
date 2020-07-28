@@ -2,27 +2,41 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: url("../img/background.png");
-  background-color: #212240;
+  background-image: url(getTheme('backgroundImage'));
+  background-color: getTheme('background');
   background-position: top left;
   background-size: cover;
-  font-family: Avenir, "Avenir Next", "Segoe UI", sans-serif;
-  font-weight: regular;
+  @extend %fontFamily;
 }
 
 h1 {
   position: relative;
   letter-spacing: -0.18px;
-  font-size: 18px;
-  line-height: 24px;
+  @include medium-large-text;
+
+  &.main {
+    padding-bottom: 16px;
+    border-bottom: 1px solid getTheme('headerBorder');
+  }
 }
 
 h2 {
-  color: #717285;
+  color: getTheme('subHeader');
   letter-spacing: 0;
   font-weight: 300;
+  @include table-header;
+
+  & + * {
+    margin-top: 16px;
+  }
 }
 
-h2 + * {
-  margin-top: 16px;
+input {
+  width: 100%;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.currency {
+  margin-left: 4px;
 }

@@ -1,0 +1,6 @@
+@import '~src/sass/toolkit';
+
+.product-price {
+  color: getTheme('productPrice');
+  font-size: 16px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { CartItem, ItemCode } from 'shopping-cart/types';
 import { Product } from './Product';
 import { ProductQuantity } from './ProductQuantity';
+import './ProductsList.scss';
 
 interface ProductsListProps {
   items: CartItem[];

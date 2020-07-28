@@ -1,5 +1,6 @@
 import React from 'react';
 import { images } from './../../../img/items';
+import './Product.scss';
 
 interface ProductProps {
   shortName: string;
@@ -13,7 +14,7 @@ export const Product: React.FunctionComponent<ProductProps> = ({ shortName, code
     <figure className="product-image">
       <img role="img" src={image} alt={shortName} />
       <div className="product-description">
-        <h1 aria-label="product-name">{shortName}</h1>
+        <h3 className="product-name" aria-label="product-name">{shortName}</h3>
         <p aria-label="product-code" className="product-code">Product code {code}</p>
       </div>
     </figure>

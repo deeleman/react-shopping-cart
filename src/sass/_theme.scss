@@ -1,11 +1,29 @@
+@use 'sass:map';
+
 // Edit theme color palette at your convenience
 $theme: (
-  'background':     #FFFFFF,
-  'loader':         #7350ff,
+  'backgroundImage': '../img/background.png',
+  'background': #212240,
+  'backgroundContainer': #ffffff,
+  'loader': #7350ff,
+  'quantityButton': #7350ff,
+  'quantityInput': #dbdbe0,
+  'header': #000000,
+  'subHeader': #717285,
+  'headerBorder': rgba(33, 34, 64, 0.16),
+  'tableHeader': #a6a7b3,
+  'asideBlockBorder': rgba(33, 34, 64, 0.16),
+  'productName': #7350ff,
+  'productPrice': #000000,
+  'thumbsBorder': #cacad1,
 );
 
-// Theme color getter helper - do not edit theme setup below this line
-@use 'sass:map';
+%fontFamily {
+  font-family: Avenir, "Avenir Next", "Segoe UI", sans-serif;
+  font-weight: regular;
+}
+
+// Theme variable getter helper - do not edit theme setup below this line
 @function getTheme($element) {
   @return map.get($theme, $element);
 }

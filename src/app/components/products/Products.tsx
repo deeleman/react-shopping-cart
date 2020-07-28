@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProductsLoader } from './ProductsLoader';
+import './Products.scss';
 
 interface ProductsProps {
   isLoading: boolean;

@@ -1,50 +1,7 @@
 @import 'normalize';
-@import 'theme';
+@import 'toolkit';
+@import 'grid';
 @import 'layout';
-
-h1.main {
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(33, 34, 64, 0.16);
-}
-
-.wrapper.border,
-.wrapper-half.border {
-  border-bottom: 1px solid rgba(33, 34, 64, 0.16);
-}
-
-h2,
-.products-list li.products-list-title {
-  color: #a6a7b3;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 10px;
-  line-height: 16px;
-}
-
-h2,
-.product-code {
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.product-quantity,
-.summary input,
-.summary ul li,
-.summary-total-cost {
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.product h1 {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-.products button.count,
-.summary-total-price {
-  font-size: 20px;
-  line-height: 25px;
-}
 
 .wrapper {
   padding: 32px 0;
@@ -54,146 +11,19 @@ h2,
   padding: 24px 0;
 }
 
-.tableHead {
-  padding: 32px 0;
+.wrapper.border,
+.wrapper-half.border {
+  @include summary-block;
 }
 
-.row {
-  position: relative;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+
+.summary ul li,
+.summary-total-cost {
+  @include medium-small-text;
 }
 
-.row + .row {
-  margin-top: 32px;
-}
-
-[class*="col-"] {
-  display: flex;
-  align-items: center;
-}
-
-[class*="col-"]:nth-child(n + 2) {
-  justify-content: center;
-}
-
-.col-product {
-  width: 45%;
-}
-
-.col-quantity {
-  width: 20%;
-}
-
-.col-price {
-  width: 20%;
-}
-
-.col-total {
-  width: 15%;
-}
-
-input {
-  width: 100%;
-  height: 48px;
-  border-radius: 4px;
-}
-
-.currency {
-  margin-left: 4px;
-}
-
-.products {
-  padding: 40px 32px 40px 56px;
-}
-
-.products button.count {
-  padding: 0 8px;
-  height: 40px;
-  border: none;
-  background: transparent;
-  color: #7350ff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.products {
-  flex: 1;
-}
-
-.products-list {
-  position: relative;
-  width: 100%;
-}
-
-.product-image {
-  display: flex;
-  align-items: center;
-  flex-flow: row nowrap;
-}
-
-.product-image img {
-  margin-right: 16px;
-  width: 72px;
-  height: 72px;
-  border: 1px solid #cacad1;
-  border-radius: 4px;
-}
-
-.product-code {
-  border-radius: 4px;
-  color: #a6a7b3;
-  letter-spacing: 0.13px;
-  font-weight: 400;
-}
-
-.product-quantity {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #dbdbe0;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.product-price {
-  color: #000000;
-  font-size: 16px;
-}
-
-.product .clear {
-  border: none;
-  background: transparent;
-}
-
-.product .clear span {
-  position: relative;
-  display: block;
-  width: 16px;
-  height: 16px;
-}
-
-.product .clear span:before,
-.product .clear span:after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 2px;
-  display: block;
-  width: 12px;
-  height: 2px;
-  border-radius: 8px;
-  background-color: #a6a7b3;
-  transform: rotate(-45deg);
-  transform-origin: center center;
-}
-
-.product .clear span:before {
-  transform: rotate(45deg);
-}
-
-.product h1 {
-  color: #7350ff;
+.summary-total-price {
+  @include large-text;
 }
 
 .summary {

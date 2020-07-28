@@ -1,0 +1,35 @@
+@import '~src/sass/toolkit';
+
+.products {
+  padding: 40px 32px 40px 56px;
+  flex: 1;
+
+  .tableHead {
+    padding: 32px 0;
+  }
+
+  .products-list {
+    position: relative;
+    width: 100%;
+
+    li.products-list-title {
+      @include table-header;
+    }
+  }
+  
+  .col-product {
+    width: 45%;
+  }
+  
+  .col-quantity {
+    width: 20%;
+  }
+  
+  .col-price {
+    width: 20%;
+  }
+  
+  .col-total {
+    width: 15%;
+  }
+}

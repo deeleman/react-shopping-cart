@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProductQuantity.scss';
 
 interface ProductQuantityProps {
   quantity?: number;
@@ -8,7 +9,7 @@ interface ProductQuantityProps {
 }
 
 export const ProductQuantity: React.FunctionComponent<ProductQuantityProps> = ({ quantity, add, remove, edit }) => (
-  <React.Fragment>
+  <>
     <button aria-label="remove" className="count" onClick={() => remove()}>-</button>
     <input aria-label="product-quantity"
       type="number"
@@ -17,7 +18,7 @@ export const ProductQuantity: React.FunctionComponent<ProductQuantityProps> = ({
       onChange={(e) => edit(parseInt(e.target.value, 10))}
     />
     <button aria-label="add" className="count" onClick={() => add()}>+</button>
-  </React.Fragment>
+  </>
 );
 
 ProductQuantity.defaultProps = { quantity: 0 };

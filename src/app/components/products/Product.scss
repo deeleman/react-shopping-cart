@@ -1,0 +1,27 @@
+@import '~src/sass/toolkit';
+
+.product-name {
+  @include medium-text;
+  color: getTheme('productName');
+}
+
+.product-code {
+  @include table-text;
+  color: getTheme('tableHeader');
+  letter-spacing: 0.13px;
+  font-weight: 400;
+}
+
+.product-image {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+
+  img {
+    margin-right: 16px;
+    width: 72px;
+    height: 72px;
+    border: 1px solid getTheme('thumbsBorder');
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,51 @@
+@mixin center-container($max-width: 1088px, $max-height: 648px) {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-width: $max-width;
+  max-height: $max-height;
+  width: calc(100% - 64px);
+  height: calc(100% - 64px);
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+}
+
+@mixin table-text {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin table-header {
+  color: getTheme('tableHeader');
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @include table-text;
+}
+
+@mixin summary-block {
+  border-bottom: 1px solid getTheme(asideBlockBorder);
+}
+
+@mixin large-text {
+  font-size: 20px;
+  line-height: 25px;
+}
+
+@mixin medium-large-text {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin medium-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin medium-small-text {
+  font-size: 14px;
+  line-height: 17px;
+}
+

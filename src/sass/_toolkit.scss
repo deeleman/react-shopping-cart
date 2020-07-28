@@ -1,0 +1,12 @@
+/*
+  This partial is intended to be imported in component 
+  stylesheets only and should contain SASS entities only.
+  Usage: In your component .scss files add this import at the top:
+
+  @import '~src/sass/toolkit';
+
+  -------------------------------------
+  Do not modify anything below this line.
+*/
+@import 'theme';
+@import 'mixins';
