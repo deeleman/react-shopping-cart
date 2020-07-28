@@ -21,7 +21,6 @@
 @mixin table-header {
   color: getTheme('tableHeader');
   text-transform: uppercase;
-  letter-spacing: 1px;
   @include table-text;
 }
 
@@ -47,6 +46,11 @@
 @mixin medium-small-text {
   font-size: 14px;
   line-height: 17px;
+}
+
+@mixin small-text {
+  font-size: 10px;
+  line-height: 16px;
 }
 
 @mixin cta-text {

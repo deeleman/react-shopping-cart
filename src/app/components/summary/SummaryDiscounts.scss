@@ -1,5 +1,9 @@
 @import '~src/sass/toolkit';
 
+.summary-discounts h2 {
+  color: getTheme('subHeader');
+}
+
 .wrapper-half {
   padding: 24px 0;
 

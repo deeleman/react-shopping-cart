@@ -14,6 +14,8 @@
 
     li.products-list-title {
       @include table-header;
+      @include small-text;
+      letter-spacing: 1px;
     }
   }
   
