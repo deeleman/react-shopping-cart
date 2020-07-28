@@ -28,6 +28,11 @@
   border-bottom: 1px solid getTheme(asideBlockBorder);
 }
 
+@mixin extra-large-text {
+  font-size: 24px;
+  line-height: 30px;
+}
+
 @mixin large-text {
   font-size: 20px;
   line-height: 25px;
@@ -59,12 +64,38 @@
   line-height: 14px;
 }
 
-@mixin large-cta {
-  margin-top: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+@mixin extra-cta-text {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+@mixin cta {
   width: 100%;
   border-radius: 4px;
   cursor: pointer;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &:disabled {
+    opacity: .4;
+  }
+}
+
+@mixin large-cta {
+  @include cta;
+  @include cta-text;
+  margin-top: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+@mixin extra-large-cta {
+  @include cta;
+  @include extra-cta-text;
+  margin-top: 20px;
+  padding: 24px 0;
 }
 

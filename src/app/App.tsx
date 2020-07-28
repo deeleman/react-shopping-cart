@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal } from './components';
+import { Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal, ProductModal } from './components';
 import { Checkout } from './models';
 import { dataService } from './services/data-service';
 import { CartItem, DiscountItem, ItemCode, PricingSettings, PricingRules } from './types';
@@ -16,6 +16,7 @@ interface AppState {
   subTotal: number;
   total: number;
   isLoading: boolean;
+  selectedItem?: CartItem;
 };
 
 export class App extends React.Component<AppProps, AppState> {
@@ -47,7 +48,8 @@ export class App extends React.Component<AppProps, AppState> {
     return (
       <main className="App">
         <Products isLoading={this.state.isLoading}>
-          <ProductsList items={this.state.cartItems} scan={this.scan} remove={this.remove} />
+          <ProductsList items={this.state.cartItems} scan={this.scan} remove={this.remove} select={this.toggleModal} />
+          <ProductModal cartItem={this.state.selectedItem} scan={this.scan} close={this.toggleModal} />
         </Products>
         <Summary>
           <SummaryItems quantity={this.state.orderedItemsQuantity} subTotal={this.state.subTotal} />
@@ -66,6 +68,10 @@ export class App extends React.Component<AppProps, AppState> {
   remove = (itemCode: ItemCode): void => {
     this.checkout.remove(itemCode);
     this.updateState();
+  }
+
+  toggleModal = (selectedItem?: CartItem): void => {
+    this.setState({ selectedItem });
   }
 
   private updateState(): void {

@@ -9,6 +9,7 @@ jest.mock('./../../../../img/items');
 describe('ProductsList', () => {
   const scanHandlerStub = jest.fn();
   const removeHandlerStub = jest.fn();
+  const selectHandlerStub = jest.fn();
   const cartItemsMock: CartItem[] = [
     { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 },
     { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
@@ -16,7 +17,7 @@ describe('ProductsList', () => {
   ];
 
   beforeEach(() => render(
-    <ProductsList items={cartItemsMock} scan={scanHandlerStub} remove={removeHandlerStub} />
+    <ProductsList items={cartItemsMock} scan={scanHandlerStub} remove={removeHandlerStub} select={selectHandlerStub} />
   ));
 
   it('should display an itemized tabular list of products', () => {
@@ -75,5 +76,15 @@ describe('ProductsList', () => {
     fireEvent.change(screen.queryAllByLabelText('product-quantity')[2], { target: { value: 0 }});
     expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.Cap, 0);
     scanHandlerStub.mockClear();
+  });
+
+  it('should trigger the select event handler when clicking on the product name or thumbnail', () => {
+    fireEvent.click(screen.getByText('Cap'));
+    expect(selectHandlerStub).toHaveBeenCalledWith(cartItemsMock[2]); // Cap cart item
+    selectHandlerStub.mockClear();
+
+    fireEvent.click(screen.getAllByRole('img')[1]);
+    expect(selectHandlerStub).toHaveBeenCalledWith(cartItemsMock[1]);  // Mug cart item
+    selectHandlerStub.mockClear();
   });
 });

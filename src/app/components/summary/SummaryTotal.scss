@@ -25,17 +25,7 @@
 
   button[type="submit"] {
     @include large-cta;
-    @include cta-text;
     background: getTheme('ctaBackground');
     color: getTheme('ctaColor');
-
-  
-    &:hover {
-      opacity: .7;
-    }
-  
-    &:disabled {
-      opacity: .4;
-    }
   }
 }

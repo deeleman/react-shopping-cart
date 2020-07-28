@@ -1,12 +1,16 @@
 import '@testing-library/jest-dom';
-import { render, screen, cleanup } from '@testing-library/react';
+import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { Product } from '../Product';
 
 jest.mock('./../../../../img/items');
 
 describe('Product', () => {
-  beforeEach(() => render(<Product shortName={'Mug'} code={'X2G2OPZ'} />));
+  const selectHandlerStub = jest.fn();
+
+  beforeEach(() => render(<Product shortName={'Mug'} code={'X2G2OPZ'} select={selectHandlerStub} />));
+
+  afterEach(() => jest.resetAllMocks());
 
   it('should display the product short name supplied', () => {
     expect(screen.getByLabelText('product-name').textContent).toEqual('Mug'); 
@@ -26,7 +30,17 @@ describe('Product', () => {
   
   it('should display a fallback image if the product has not thumbnail matching its code', () => {
     cleanup();
-    const { getByRole } = render(<Product shortName={'Foo'} code={'X2G2OPZ'} />)
+    const { getByRole } = render(<Product shortName={'Foo'} code={'X2G2OPZ'} select={selectHandlerStub} />);
     expect(getByRole('img').getAttribute('src')).toEqual('fallback.png'); 
+  });
+
+  it('should call the select handler when the user clicks on the product name', () => {
+    fireEvent.click(screen.getByText('Mug'));
+    expect(selectHandlerStub).toHaveBeenCalled();
+  });
+
+  it('should call the select handler when the user clicks on the image thumbnail', () => {
+    fireEvent.click(screen.getByRole('img'));
+    expect(selectHandlerStub).toHaveBeenCalled();
   });
 });

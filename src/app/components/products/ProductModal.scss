@@ -1,0 +1,70 @@
+@import '~src/sass/toolkit';
+
+.modal {
+  @include center-container(1416, 840);
+  background-color: getTheme('backgroundContainer');
+  animation: overlayIn .3s ease-in-out;
+
+  &__description {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 45px;
+
+    > * {
+      padding: 18px 0;
+    }
+
+    &-name-price {
+      display: flex;
+      justify-content: space-between;
+      @include extra-large-text;
+      @include summary-block;
+      padding-top: 0;
+    }
+
+    &-code {
+      color: getTheme('tableHeader');
+    }
+
+    &-abstract {
+      @include summary-block;
+      @include medium-text;
+      line-height: 22px;
+      font-weight: 500;
+      padding-bottom: 4rem;
+    }
+
+    button[type="submit"] {
+      @include extra-large-cta;
+      background: getTheme('ctaBackground');
+      color: getTheme('ctaColor');
+    }
+  }
+
+  &__close {
+    position: absolute;
+    display: block;
+    top: 50px;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+    background: transparent url('./../../../img/close.png') no-repeat;
+    cursor: pointer;
+    opacity: .3;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

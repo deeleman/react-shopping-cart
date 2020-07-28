@@ -7,7 +7,7 @@ import { App } from '../App';
 jest.mock('./../img/items');
 jest.mock('./services/data-service');
 
-describe('App', () => {
+describe('App smoke tests', () => {
   const settingsMock: PricingSettings = {
     items:          'https://test.dev/api/v1/items',
     discountRules:  'https://test.dev/api/v1/discounts',

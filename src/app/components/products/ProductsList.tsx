@@ -8,15 +8,20 @@ interface ProductsListProps {
   items: CartItem[];
   scan: (itemCode: ItemCode, quantity?: number) => void;
   remove: (itemCode: ItemCode) => void;
+  select: (cartItem: CartItem) => void; 
 }
 
-export const ProductsList: React.FunctionComponent<ProductsListProps> = ({ items, scan, remove }) => {
+export const ProductsList: React.FunctionComponent<ProductsListProps> = ({ items, scan, remove, select }) => {
   return (
     <ul className="products-list" role="list">
       { items.map((cartItem) => (
         <li key={cartItem.id} className="product row" role="listitem">
           <div className="col-product">
-            <Product shortName={cartItem.shortName} code={cartItem.id} />
+            <Product
+              shortName={cartItem.shortName}
+              code={cartItem.id}
+              select={() => select(cartItem)}
+            />
           </div>
           <div className="col-quantity">
             <ProductQuantity

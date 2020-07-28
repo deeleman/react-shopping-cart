@@ -3,6 +3,10 @@
 .product-name {
   @include medium-text;
   color: getTheme('productName');
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .product-code {
@@ -23,5 +27,9 @@
     height: 72px;
     border: 1px solid getTheme('thumbsBorder');
     border-radius: 4px;
+  }
+
+  a:hover img {
+    border-color: getTheme('productName');
   }
 }
