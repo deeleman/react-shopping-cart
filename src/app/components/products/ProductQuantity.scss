@@ -19,3 +19,13 @@ button.count {
   border-radius: 4px;
   text-align: center;
 }
+
+.product-quantity::-webkit-outer-spin-button,
+.product-quantity::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-quantity[type=number] {
+  -moz-appearance: textfield;
+}
