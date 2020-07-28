@@ -1,4 +1,4 @@
-import { DiscountsService } from './../services';
+import { DiscountsService } from 'shopping-cart/services';
 import { CartItem, DiscountItem, ItemCode, PricingRules } from 'shopping-cart/types';
 import { CheckoutScanner, CheckoutTotal } from './checkout.types';
 
