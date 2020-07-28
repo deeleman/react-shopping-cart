@@ -3,7 +3,7 @@
 [![Website deeleman-cabify-challenge.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-cabify-challenge.netlify.app.svg)](https://deeleman-cabify-challenge.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of TypeScript and React.
+Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation.
 
 A **live running build** of this project is available at https://deeleman-cabify-challenge.netlify.app.
 
@@ -23,7 +23,7 @@ As a first step to spawn a development environment or production build, please r
 
 The project is designed to fetch all data regarding products and discounts rules from a given REST API. Particularly, the project will fetch the information required to populate a full product catalogue and pricing rules for prices and discounts by fetching data from two separate endpoints.
 
-You can update this setup by accessing `/src/settings.ts` and editing the following parameters:
+You can update this setup by accessing [/src/settings.ts](https://gitlab.com/cabify-challenge/frontend-shopping-cart-challenge-deeleman/-/blob/master/src/settings.ts#L5-6) and editing the following parameters:
 * `items`: URL for the remote REST API endpoint that exposes product items for our store.
 * `discountRules`: URL for the remote REST API endpoint that exposes configuration rules for discounts applicable.
 
@@ -31,7 +31,7 @@ You will want to rebuild the project after updating these settings, although thi
 
 #### Type schemas to abide when configuring custom API endpoints
 
-The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](static/api/fixtures) folder.
+The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](https://gitlab.com/cabify-challenge/frontend-shopping-cart-challenge-deeleman/-/blob/master/src/app/types/items.ts#L7-12) and [DiscountRule](https://gitlab.com/cabify-challenge/frontend-shopping-cart-challenge-deeleman/-/blob/master/src/app/types/discounts.ts#L10-15) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](static/api/fixtures) folder.
 
 #### Color themes
 The overall aplication theme settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.
