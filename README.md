@@ -1,4 +1,5 @@
 # Frontend Shopping Cart
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of TypeScript and React.
 
@@ -16,7 +17,7 @@ As a first step to spawn a development environment or production build, please r
 
 > **Please note**: This step is optional if you aim to run the application in dev mode only. The project is shipped with all settings preconfigured by default so you can leverage data fixtures already baked into the development server environment. Feel free to skip to the next section if you do not want to customize your data preferences.
 
-The project is designed to require all data regarding products and discounts rules to be fetched from a given REST API. Particularly, the project will fetch the information required to configure a full product catalogue and the pricing rules that dictate what discounts might apply to the ongoing order.
+The project is designed to fetch all data regarding products and discounts rules from a given REST API. Particularly, the project will fetch the information required to populate a full product catalogue and pricing rules for prices and discounts by fetching data from two separate endpoints.
 
 You can update this setup by accessing `/src/settings.ts` and editing the following parameters:
 * `items`: URL for the remote REST API endpoint that exposes product items for our store.
@@ -26,10 +27,10 @@ You will want to rebuild the project after updating these settings, although thi
 
 #### Type schemas to abide when configuring custom API endpoints
 
-The application comes preconfigured wih testing URLs pointing to local JSON resources. In case you want to switch to other third-party API endpoints of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](static/api/fixtures) folder.
+The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](./src/app/types/items.ts) and [DiscountRule](./src/app/types/discounts.ts) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](static/api/fixtures) folder.
 
 #### Color themes
-The overall aplication color palette have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss).
+The overall aplication theme settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.
 
 ## Firing up a development environment
 You can spawn a development environment by running `yarn dev` or `npm run dev` in the console.
