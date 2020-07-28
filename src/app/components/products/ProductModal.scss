@@ -5,12 +5,20 @@
   background-color: getTheme('backgroundContainer');
   animation: overlayIn .3s ease-in-out;
 
+  &__image {
+    flex: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   &__description {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 45px;
+    max-width: 400px;
 
     > * {
       padding: 18px 0;

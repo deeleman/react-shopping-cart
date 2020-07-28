@@ -38,9 +38,16 @@ describe('ProductModal', () => {
 
   it('should display the product image in large format', () => {
     setupTest(cartItemMock);
-    expect(screen.getByRole('img').getAttribute('src')).toEqual('shirtLarge.png'); 
+    expect(screen.getByRole('img').getAttribute('style')).toContain('shirtLarge.png'); 
   });
-  
+
+  it('should display a fallback image if the product has not thumbnail matching its code', () => {
+    cleanup();
+    const cartItemFakeMock = { ...cartItemMock, shortName: 'Foo' };
+    render(<ProductModal cartItem={cartItemFakeMock} scan={scanHandlerStub} close={closeHandlerStub} />);
+    expect(screen.getByRole('img').getAttribute('style')).toContain('fallbackLarge.png'); 
+  });
+
   it('should call the scan handler upon clicking on the add to cart button and then trigger the close event', () => {
     setupTest(cartItemMock);
     fireEvent.click(screen.getAllByRole('button')[0]);
@@ -53,13 +60,6 @@ describe('ProductModal', () => {
     fireEvent.click(screen.getAllByRole('button')[1]);
     expect(scanHandlerStub).not.toHaveBeenCalledWith(ItemCode.TShirt);
     expect(closeHandlerStub).toHaveBeenCalled();
-  });
-
-  it('should display a fallback image if the product has not thumbnail matching its code', () => {
-    cleanup();
-    const cartItemFakeMock = { ...cartItemMock, shortName: 'Foo' };
-    render(<ProductModal cartItem={cartItemFakeMock} scan={scanHandlerStub} close={closeHandlerStub} />);
-    expect(screen.getByRole('img').getAttribute('src')).toEqual('fallbackLarge.png'); 
   });
 
   it('should not display the product modal if the input item is not set', () => {

@@ -19,11 +19,11 @@ export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ cartI
   return cartItem && cartItem.code
     ? ReactDOM.createPortal(
       <div className="modal" role="dialog">
-        <figure className="modal__image">
-          <img
-            role="img"
-              src={images[`${cartItem.shortName.toLowerCase()}Large`] || images['fallbackLarge']} alt={cartItem.shortName}
-          />
+        <figure
+          role="img"
+          className="modal__image"
+          style={{ backgroundImage: `url(${images[`${cartItem.shortName.toLowerCase()}Large`] || images['fallbackLarge']})` }}
+        >
         </figure>
         <aside className="modal__description">
           <h3 className="modal__description-name-price">
