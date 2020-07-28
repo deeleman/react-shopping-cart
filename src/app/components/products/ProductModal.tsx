@@ -1,8 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { CartItem, ItemCode } from 'shopping-cart/types';
 import { images } from './../../../img/items';
 import './ProductModal.scss';
-import ReactDOM from 'react-dom';
 
 interface ProductModalProps {
   cartItem?: CartItem;
@@ -10,22 +10,17 @@ interface ProductModalProps {
   close: () => void;
 }
 
-const fetchImage = (cartItem: CartItem) => cartItem ?
-  images[`${cartItem.shortName.toLowerCase()}Large`] || images['fallbackLarge'] :
-  null;
-
 export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ cartItem, scan, close }) => {
   const scanItemHandler = (cartItem: CartItem) => {
     scan(cartItem.code);
     close();
   };
 
-
-  return cartItem && cartItem.shortName
+  return cartItem && cartItem.code
     ? ReactDOM.createPortal(
-      <div className="modal">
+      <div className="modal" role="dialog">
         <figure className="modal__image">
-          <img role="img" src={fetchImage(cartItem)} alt={cartItem.shortName} />
+          <img role="img" src={images[`${cartItem.shortName.toLowerCase()}Large`] || images['fallbackLarge']} alt={cartItem.shortName} />
         </figure>
         <aside className="modal__description">
           <h3 className="modal__description-name-price">
@@ -40,8 +35,8 @@ export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ cartI
           <h4 className="modal__description-code">Product code {cartItem.id}</h4>
           <div>
             <button role="button" type="submit" onClick={() => scanItemHandler(cartItem)}>Add to cart</button>
+            <button className="modal__close" onClick={close} aria-label="close" />
           </div>
-          <button className="modal__close" onClick={close} aria-label="close" />
         </aside>
       </div>,
       document.querySelector('#modals') || document.body

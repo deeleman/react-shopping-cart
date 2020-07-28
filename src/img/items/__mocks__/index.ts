@@ -6,4 +6,5 @@ export const images = {
   capLarge: 'capLarge.png',
   shirtLarge: 'shirtLarge.png',
   fallback: 'fallback.png',
+  fallbackLarge: 'fallbackLarge.png',
 };

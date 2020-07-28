@@ -52,4 +52,12 @@ describe('App smoke tests', () => {
     fireEvent.change(mugQuantityInput, { target: { value: 11 }}); // Mug qty input
     expect(mugQuantityInput).toHaveValue(11);
   });
+
+  it('should enable the product modal upon clicking on the product item', async () => {
+    const thumbs = await screen.findAllByRole('img');
+    expect(screen.queryByRole('dialog')).toBeNull();
+
+    fireEvent.click(thumbs[1]);
+    expect(screen.queryByRole('dialog')).not.toBeNull();
+  });
 });
