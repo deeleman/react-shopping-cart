@@ -1,7 +1,7 @@
-# Frontend Shopping Cart
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+# Cabify Shopping Cart
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3015988c-0069-4d65-8e29-4a7e3ceaa9c5/deploy-status)](https://app.netlify.com/sites/deeleman-cabify-challenge/deploys) 
 [![Website deeleman-cabify-challenge.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-cabify-challenge.netlify.app.svg)](https://deeleman-cabify-challenge.netlify.app)
-
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
 Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of TypeScript and React.
 
