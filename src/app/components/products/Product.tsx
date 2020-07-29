@@ -19,7 +19,7 @@ export const Product: React.FunctionComponent<ProductProps> = ({ shortName, code
         <h3 className="product-name" aria-label="product-name">
           <a onClick={select}>{shortName}</a>
         </h3>
-        <p aria-label="product-code" className="product-code">Product code {code}</p>
+        <p aria-label="product-code" className="product-code"><span>Product code</span> {code}</p>
       </div>
     </figure>
   );

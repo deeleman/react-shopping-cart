@@ -1,3 +1,9 @@
+@mixin breakpoint($point: $breakpoint) {
+  @media (max-width: $point) { 
+    @content; 
+  }
+}
+
 @mixin center-container($max-width: 1088px, $max-height: 648px) {
   position: fixed;
   top: 50%;
@@ -11,6 +17,17 @@
   height: calc(100% - 64px);
   border-radius: 4px;
   transform: translate(-50%, -50%);
+
+  @include breakpoint($point: $breakpoint) {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    width: calc(100% - 32px);
+    height: 100%;
+    max-height: 100%;
+    transform: translate(0, 0);
+    overflow-y: visible;
+  }
 }
 
 @mixin table-text {

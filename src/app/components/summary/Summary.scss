@@ -8,6 +8,10 @@
   background-color: getTheme('summaryBackground');
   color: getTheme('summaryTextColor');
 
+  @include breakpoint() {
+    width: 100%;
+  }
+
   > * {
     width: 100%;
   }
