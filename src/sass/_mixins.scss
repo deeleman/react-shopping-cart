@@ -114,9 +114,3 @@
   margin-top: 20px;
   padding: 24px 0;
 }
-
-@mixin breakpoint($point: $breakpoint) {
-  @media (max-width: $point) { 
-    @content; 
-  }
-}
