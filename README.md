@@ -4,7 +4,7 @@
 [![Website deeleman-cabify-challenge.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-cabify-challenge.netlify.app.svg)](https://deeleman-cabify-challenge.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI provided with limited responsivity for smaller resolutions.
+Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI enhanced by limited responsivity.
 
 A **live running build** of this project is available at https://deeleman-cabify-challenge.netlify.app.
 
@@ -35,7 +35,7 @@ You will want to rebuild the project after updating these settings, although thi
 The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](https://gitlab.com/cabify-challenge/frontend-shopping-cart-challenge-deeleman/-/blob/master/src/app/types/items.ts#L7-12) and [DiscountRule](https://gitlab.com/cabify-challenge/frontend-shopping-cart-challenge-deeleman/-/blob/master/src/app/types/discounts.ts#L10-15) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](static/api/fixtures) folder.
 
 #### Color themes
-The overall aplication theme settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.
+The overall aplication theme and minor responsivity settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.
 
 ## Firing up a development environment
 You can spawn a development environment by running `yarn dev` or `npm run dev` in the console.
@@ -55,7 +55,7 @@ The code in this application is audited with
 - `yarn test`: runs all the application tests.
 
 ### Code coverage reports
-[Jest](https://jestjs.io/) has been configured to generate a full code coverage report in HTML format on every time run of the `test` command. This coverage report can be found at `/coverage/lcov-report` when running tests in your local environment.
+[Jest](https://jestjs.io/) has been configured to generate a full code coverage report in HTML format on every time run of the `test` command. This coverage report can be found at `/coverage/lcov-report` after tests are run successfully.
 
 ## Distributed under the MIT License
 
