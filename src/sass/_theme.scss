@@ -4,7 +4,7 @@
 // Edit theme settings below at your convenience
 // ----------------------------------------------
 // - Main Background Image
-$appBackgroundImage: '~/img/background.png';
+$appBackgroundImage         : '~/img/background.png';
 // - Fonts family set
 $appFontsFamily             : Avenir, 'Avenir Next', 'Segoe UI', sans-serif;
 // - Theme color palette
@@ -27,3 +27,5 @@ $theme: (
   'ctaColor'                : #ffffff,
   'ctaBackground'           : #7350ff,
 );
+// - Responsive threshold
+$breakpoint                 : 600px;

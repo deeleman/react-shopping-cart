@@ -24,6 +24,10 @@
     padding: 45px;
     max-width: 400px;
 
+    @include breakpoint() {
+      max-width: 100%;
+    }
+
     > * {
       padding: 18px 0;
     }
@@ -66,7 +70,7 @@
     cursor: pointer;
     opacity: .3;
 
-    @media (max-width: 600px) {
+    @include breakpoint() {
       top: 20px;
       right: 20px;
     }
