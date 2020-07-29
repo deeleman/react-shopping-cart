@@ -4,7 +4,7 @@
 [![Website deeleman-cabify-challenge.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-cabify-challenge.netlify.app.svg)](https://deeleman-cabify-challenge.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation.
+Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI provided with limited responsivity for smaller resolutions.
 
 A **live running build** of this project is available at https://deeleman-cabify-challenge.netlify.app.
 
