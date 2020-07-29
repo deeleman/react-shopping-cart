@@ -5,7 +5,7 @@
   background-color: getTheme('backgroundContainer');
   animation: overlayIn .3s ease-in-out;
 
-  @media (max-width: 600px) {
+  @include breakpoint() {
     flex-direction: column;
   }
 
@@ -14,6 +14,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include breakpoint() {
+      min-height: 200px;
+    }
   }
 
   &__description {
