@@ -38,9 +38,9 @@ export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ cartI
           <h4 className="modal__description-code">Product code {cartItem.id}</h4>
           <div>
             <button role="button" type="submit" onClick={() => scanItemHandler(cartItem)}>Add to cart</button>
-            <button className="modal__close" onClick={close} aria-label="close" />
           </div>
         </aside>
+        <button className="modal__close" onClick={close} aria-label="close" />
       </div>,
       document.querySelector('#modals') || document.body
     )

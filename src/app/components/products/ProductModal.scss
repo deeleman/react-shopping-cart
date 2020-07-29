@@ -5,6 +5,10 @@
   background-color: getTheme('backgroundContainer');
   animation: overlayIn .3s ease-in-out;
 
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+
   &__image {
     flex: 1;
     background-position: center;
@@ -61,6 +65,11 @@
     background: transparent url('./../../../img/close.png') no-repeat;
     cursor: pointer;
     opacity: .3;
+
+    @media (max-width: 600px) {
+      top: 20px;
+      right: 20px;
+    }
 
     &:hover {
       opacity: .8;
