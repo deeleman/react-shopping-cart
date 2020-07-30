@@ -16,7 +16,6 @@
   "dependencies": {
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "shopping-cart": "^1.0.4",
     "whatwg-fetch": "3.2.0"
   },
   "devDependencies": {

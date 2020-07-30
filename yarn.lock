@@ -6819,11 +6819,6 @@ shellwords@^0.1.1:
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
 
-shopping-cart@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/shopping-cart/-/shopping-cart-1.0.4.tgz#b6ceaf169dbe5bdff219eb6fcfcf80711671b37b"
-  integrity sha512-oTkzlP5FLu7SOkizH/vyy7ywXunzw+A20hNjQ+24e+E/6b5gZeMOTbDrLaAF2dDNLibTovXJwikxyF4ULrORIQ==
-
 side-channel@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/side-channel/-/side-channel-1.0.2.tgz#df5d1abadb4e4bf4af1cd8852bf132d2f7876947"
