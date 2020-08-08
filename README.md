@@ -1,6 +1,8 @@
 # React Shopping Cart
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3015988c-0069-4d65-8e29-4a7e3ceaa9c5/deploy-status)](https://app.netlify.com/sites/deeleman-react-shopping-cart/deploys) 
+[![Build Status](https://travis-ci.org/deeleman/react-shopping-cart.svg?branch=master)](https://travis-ci.org/deeleman/react-shopping-cart)
+[![Coverage Status](https://coveralls.io/repos/github/deeleman/react-shopping-cart/badge.svg?branch=master)](https://coveralls.io/github/deeleman/react-shopping-cart?branch=master)
 [![Website deeleman-react-shopping-cart.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-react-shopping-cart.netlify.app.svg)](https://deeleman-react-shopping-cart.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
