@@ -1,17 +1,17 @@
-@import '~src/sass/toolkit';
+@use '~src/sass/toolkit';
 
 .products {
   padding: 40px 32px 40px 56px;
   flex: 1;
 
-  @include breakpoint() {
+  @include toolkit.breakpoint() {
     padding: 40px 32px;
   }
 
   .tableHead {
     padding: 32px 0;
 
-    @include breakpoint() {
+    @include toolkit.breakpoint() {
       display: none;
     }
   }
@@ -20,13 +20,13 @@
     position: relative;
     width: 100%;
 
-    @include breakpoint() {
+    @include toolkit.breakpoint() {
       margin-top: 32px;
     }
 
     li.products-list-title {
-      @include table-header;
-      @include small-text;
+      @include toolkit.table-header;
+      @include toolkit.small-text;
       letter-spacing: 1px;
     }
   }

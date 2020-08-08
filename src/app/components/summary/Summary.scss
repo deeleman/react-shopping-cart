@@ -1,14 +1,14 @@
-@import '~src/sass/toolkit';
+@use '~src/sass/toolkit';
 
 .summary {
   display: flex;
   flex-flow: column wrap;
   padding: 40px 32px;
   width: 312px;
-  background-color: getTheme('summaryBackground');
-  color: getTheme('summaryTextColor');
+  background-color: toolkit.getTheme('summaryBackground');
+  color: toolkit.getTheme('summaryTextColor');
 
-  @include breakpoint() {
+  @include toolkit.breakpoint() {
     width: 100%;
   }
 
@@ -17,7 +17,7 @@
   }
 
   ul li {
-    @include medium-small-text;
+    @include toolkit.medium-small-text;
     display: flex;
     justify-content: space-between;
   
@@ -34,7 +34,7 @@
     padding: 32px 0;
 
     &.border {
-      @include summary-block;
+      @include toolkit.summary-block;
     }
   }
 }

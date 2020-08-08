@@ -1,4 +1,6 @@
-@mixin breakpoint($point: $breakpoint) {
+@use 'theme';
+
+@mixin breakpoint($point: theme.$breakpoint) {
   @media (max-width: $point) { 
     @content; 
   }

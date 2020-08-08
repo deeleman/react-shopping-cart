@@ -1,13 +1,13 @@
-@import '~src/sass/toolkit';
+@use '~src/sass/toolkit';
 
 .summary-discounts h2 {
-  color: getTheme('subHeader');
+  color: toolkit.getTheme('subHeader');
 }
 
 .wrapper-half {
   padding: 24px 0;
 
   &.border {
-    @include summary-block;
+    @include toolkit.summary-block;
   }
 }

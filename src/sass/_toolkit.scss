@@ -3,11 +3,11 @@
   stylesheets only and should contain SASS entities only.
   Usage: In your component .scss files add this import at the top:
 
-  @import '~src/sass/toolkit';
+  @use '~src/sass/toolkit';
 
   -------------------------------------
   Do not modify anything below this line.
 */
-@import 'theme';
-@import 'helpers';
-@import 'mixins';
+@forward 'theme';
+@forward 'helpers';
+@forward 'mixins';

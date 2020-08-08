@@ -1,11 +1,11 @@
-@import '~src/sass/toolkit';
+@use '~src/sass/toolkit';
 
 .modal {
-  @include center-container(1416px, 840px);
-  background-color: getTheme('backgroundContainer');
+  @include toolkit.center-container(1416px, 840px);
+  background-color: toolkit.getTheme('backgroundContainer');
   animation: overlayIn .3s ease-in-out;
 
-  @include breakpoint() {
+  @include toolkit.breakpoint() {
     flex-direction: column;
   }
 
@@ -15,7 +15,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    @include breakpoint() {
+    @include toolkit.breakpoint() {
       min-height: 200px;
     }
   }
@@ -28,7 +28,7 @@
     padding: 45px;
     max-width: 400px;
 
-    @include breakpoint() {
+    @include toolkit.breakpoint() {
       max-width: 100%;
     }
 
@@ -39,27 +39,27 @@
     &-name-price {
       display: flex;
       justify-content: space-between;
-      @include extra-large-text;
-      @include summary-block;
+      @include toolkit.extra-large-text;
+      @include toolkit.summary-block;
       padding-top: 0;
     }
 
     &-code {
-      color: getTheme('tableHeader');
+      color: toolkit.getTheme('tableHeader');
     }
 
     &-abstract {
-      @include summary-block;
-      @include medium-text;
+      @include toolkit.summary-block;
+      @include toolkit.medium-text;
       line-height: 22px;
       font-weight: 500;
       padding-bottom: 4rem;
     }
 
     button[type="submit"] {
-      @include extra-large-cta;
-      background: getTheme('ctaBackground');
-      color: getTheme('ctaColor');
+      @include toolkit.extra-large-cta;
+      background: toolkit.getTheme('ctaBackground');
+      color: toolkit.getTheme('ctaColor');
     }
   }
 
@@ -74,7 +74,7 @@
     cursor: pointer;
     opacity: .3;
 
-    @include breakpoint() {
+    @include toolkit.breakpoint() {
       top: 20px;
       right: 20px;
     }

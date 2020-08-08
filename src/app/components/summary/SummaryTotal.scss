@@ -1,11 +1,11 @@
-@import '~src/sass/toolkit';
+@use '~src/sass/toolkit';
 
 .summary-total {
   align-self: flex-end;
   margin-top: auto;
    
-  border-top: 1px solid getTheme('asideBlockBorder');
-  color: getTheme('summaryTextColor');
+  border-top: 1px solid toolkit.getTheme('asideBlockBorder');
+  color: toolkit.getTheme('summaryTextColor');
 
   &.wrapper {
     padding-top: 16px;
@@ -13,19 +13,19 @@
   }
 
   &-cost {
-    @include medium-small-text;
+    @include toolkit.medium-small-text;
     flex-basis: 2;
     text-transform: uppercase;
   }
 
   &-price {
-    @include large-text;
+    @include toolkit.large-text;
     font-weight: bold;
   }
 
   button[type="submit"] {
-    @include large-cta;
-    background: getTheme('ctaBackground');
-    color: getTheme('ctaColor');
+    @include toolkit.large-cta;
+    background: toolkit.getTheme('ctaBackground');
+    color: toolkit.getTheme('ctaColor');
   }
 }

@@ -1,10 +1,10 @@
-@import '~src/sass/toolkit';
+@use '~src/sass/toolkit';
 
 .App {
-  @include center-container();
-  background-color: getTheme('backgroundContainer');
+  @include toolkit.center-container();
+  background-color: toolkit.getTheme('backgroundContainer');
 
-  @include breakpoint() {
+  @include toolkit.breakpoint() {
     flex-direction: column;
   }
 }

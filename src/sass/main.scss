@@ -1,4 +1,3 @@
-@import 'normalize';
-@import 'toolkit';
-@import 'grid';
-@import 'layout';
+@use 'normalize';
+@use 'grid';
+@use 'layout';

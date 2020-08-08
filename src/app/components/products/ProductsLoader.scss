@@ -1,4 +1,4 @@
-@import '~src/sass/toolkit';
+@use '~src/sass/toolkit';
 
 .products-loader {
   display: block;
@@ -14,7 +14,7 @@
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: getTheme('loader');
+    background: toolkit.getTheme('loader');
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
 
     &:nth-child(1) {

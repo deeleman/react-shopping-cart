@@ -1,31 +1,33 @@
+@use 'toolkit';
+
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background-image: url($appBackgroundImage);
-  background-color: getTheme('mainBackgroundColor');
+  background-image: url(toolkit.$appBackgroundImage);
+  background-color: toolkit.getTheme('mainBackgroundColor');
   background-position: top left;
   background-size: cover;
-  font-family: $appFontsFamily;
+  font-family: toolkit.$appFontsFamily;
   font-weight: regular;
 }
 
 h1 {
   position: relative;
   letter-spacing: -0.18px;
-  @include medium-large-text;
+  @include toolkit.medium-large-text;
 
   &.main {
     padding-bottom: 16px;
-    border-bottom: 1px solid getTheme('headerBorder');
+    border-bottom: 1px solid toolkit.getTheme('headerBorder');
   }
 }
 
 h2 {
-  color: getTheme('subHeader');
+  color: toolkit.getTheme('subHeader');
   letter-spacing: 0;
   font-weight: 300;
-  @include table-header;
+  @include toolkit.table-header;
 
   & + * {
     margin-top: 16px;
