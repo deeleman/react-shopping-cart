@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "parcel src/index.html -p 9000",
     "build": "rimraf ./dist && parcel build src/index.html --no-cache",
-    "build:ci": "yarn lint && yarn test:ci && yarn build",
+    "build:ci": "yarn lint && yarn test && yarn build",
     "test": "jest --silent",
     "test:ci": "jest --silent --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint --ext .ts --ext .tsx src"
