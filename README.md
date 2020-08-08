@@ -1,12 +1,12 @@
-# Frontend Shopping Cart Challenge
+# React Shopping Cart
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3015988c-0069-4d65-8e29-4a7e3ceaa9c5/deploy-status)](https://app.netlify.com/sites/deeleman-cabify-challenge/deploys) 
-[![Website deeleman-cabify-challenge.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-cabify-challenge.netlify.app.svg)](https://deeleman-cabify-challenge.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3015988c-0069-4d65-8e29-4a7e3ceaa9c5/deploy-status)](https://app.netlify.com/sites/deeleman-react-shopping-cart/deploys) 
+[![Website deeleman-react-shopping-cart.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-react-shopping-cart.netlify.app.svg)](https://deeleman-react-shopping-cart.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Interactive, customisable shopping cart with discounts computation functionality and real-time total order price tracking, built on top of [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI enhanced by limited responsivity.
+Interactive, customisable shopping cart demo with discounts computation functionality and real-time total order price tracking, built on top of [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI enhanced by limited responsivity.
 
-A **live running build** of this project is available at https://deeleman-cabify-challenge.netlify.app.
+A **live running build** of this project is available at https://deeleman-react-shopping-cart.netlify.app.
 
 ![Example image](./static/docs/example.png?raw=true)
 
