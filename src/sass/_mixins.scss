@@ -1,4 +1,5 @@
 @use 'theme';
+@use 'helpers';
 
 @mixin breakpoint($point: theme.$breakpoint) {
   @media (max-width: $point) { 
@@ -37,13 +38,13 @@
 }
 
 @mixin table-header {
-  color: getTheme('tableHeader');
+  color: helpers.getTheme('tableHeader');
   text-transform: uppercase;
   @include table-text;
 }
 
 @mixin summary-block {
-  border-bottom: 1px solid getTheme(asideBlockBorder);
+  border-bottom: 1px solid helpers.getTheme(asideBlockBorder);
 }
 
 @mixin extra-large-text {
