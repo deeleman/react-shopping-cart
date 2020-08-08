@@ -26,7 +26,7 @@ module.exports = {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     "/node_modules/",
-    "/static/",
+    "/public/",
     "/src/app/types/",
     "index.ts",
   ],
@@ -80,7 +80,7 @@ module.exports = {
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '^shopping-cart-api\/fixtures\/(.*)$': '<rootDir>/static/api/fixtures/$1.json',
+    '^shopping-cart-api\/fixtures\/(.*)$': '<rootDir>/public/api/fixtures/$1.json',
     '^shopping-cart\/(.*)$': '<rootDir>/src/app/$1',
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy'
   },

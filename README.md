@@ -8,7 +8,7 @@ Interactive, customisable shopping cart demo with discounts computation function
 
 A **live running build** of this project is available at https://deeleman-react-shopping-cart.netlify.app.
 
-![Example image](./static/docs/example.png?raw=true)
+![Example image](./public/docs/example.png?raw=true)
 
 ## Setting up your environment
 The minimum requirements for running this project, either on development or production mode, and its development scripts are `node v12.16.0` and `npm v.6.14.15`, or later versions. Probably this project will run seamlessly on older versions of `node` and `npm` but we recommend using the latest [LTS versions](https://nodejs.org/).
@@ -32,7 +32,7 @@ You will want to rebuild the project after updating these settings, although thi
 
 #### Type schemas to abide when configuring custom API endpoints
 
-The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/items.ts#L7-L12) and [DiscountRule](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/discounts.ts#L10-L15) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](static/api/fixtures) folder.
+The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/items.ts#L7-L12) and [DiscountRule](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/discounts.ts#L10-L15) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](public/api/fixtures) folder.
 
 #### Color themes
 The overall aplication theme and minor responsivity settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.
