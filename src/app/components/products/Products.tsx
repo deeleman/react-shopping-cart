@@ -16,7 +16,7 @@ export const Products: React.FunctionComponent<ProductsProps> = ({ isLoading, ch
     </>
     ) : (
     <>
-      <h1 role="main" className="main">Shopping cart</h1>
+      <h1 role="main" className="main">React Swag Catalogue</h1>
       <ul role="heading" className="products-list tableHead">
         <li className="products-list-title row">
           <div className="col-product">Product details</div>

@@ -15,7 +15,7 @@ describe('Products', () => {
 
   it('should display a products loader when the component is loading', () => {
     setupTest(false);
-    expect(screen.getByRole('main').textContent).toContain('Shopping cart'); 
+    expect(screen.getByRole('main').textContent).toContain('React Swag Catalogue'); 
     expect(screen.getByRole('heading')).toBeInTheDocument();
   });
 
