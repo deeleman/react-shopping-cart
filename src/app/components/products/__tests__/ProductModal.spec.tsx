@@ -9,7 +9,7 @@ jest.mock('./../../../../img/items');
 describe('ProductModal', () => {
   const scanHandlerStub = jest.fn();
   const closeHandlerStub = jest.fn();
-  const cartItemMock: CartItem = { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 };
+  const cartItemMock: CartItem = { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 };
 
   const setupTest = (cartItem?: CartItem) => render(
     <ProductModal
@@ -23,7 +23,7 @@ describe('ProductModal', () => {
 
   it('should display the product name', () => {
     setupTest(cartItemMock);
-    expect(screen.getByText('Cabify T-Shirt')).toBeInTheDocument();
+    expect(screen.getByText('React T-Shirt')).toBeInTheDocument();
   });
 
   it('should display the product price', () => {

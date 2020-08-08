@@ -63,14 +63,14 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -85,16 +85,16 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -114,16 +114,16 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 2 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 2 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 2 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 2 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -137,14 +137,14 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 3 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 3 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 3 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 3 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -158,16 +158,16 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -182,15 +182,15 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 0 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 0 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -205,15 +205,15 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 0 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 0 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 2 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -252,14 +252,14 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 7 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 7 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 7 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 7 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -271,15 +271,15 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 11 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 11 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
         ]);
 
       expect(checkout.orderedItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 11 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 11 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
         ]);
 
       expect(checkout.orderedItemsQuantity)
@@ -292,9 +292,9 @@ describe('Checkout', () => {
 
       expect(checkout.cartItems)
         .toEqual([
-          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
-          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 0 },
-          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
+          { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 0 },
+          { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 0 },
+          { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 0 },
         ]);
 
       expect(checkout.orderedItems)
@@ -306,9 +306,9 @@ describe('Checkout', () => {
   });
 
   describe('upon providing applicable discounts', () => {
-    const mockMugCartItem: CartItem = { code: ItemCode.Mug, id: 'X2G2OPZ', name: 'Cabify Coffee Mug', shortName: 'Mug', quantity: 2, price: 5 };
+    const mockMugCartItem: CartItem = { code: ItemCode.Mug, id: 'X2G2OPZ', name: 'React Coffee Mug', shortName: 'Mug', quantity: 2, price: 5 };
     const mockMugDiscount = { type: DiscountType['2x1'], itemCode: ItemCode.Mug, name: '2x1 Mug offer', subTotal: 5 };
-    const mockShirtCartItem: CartItem = { code: ItemCode.TShirt, id: 'X7R2OPX', name: 'Cabify T-Shirt', shortName: 'Shirt', quantity: 3, price: 20 };
+    const mockShirtCartItem: CartItem = { code: ItemCode.TShirt, id: 'X7R2OPX', name: 'React T-Shirt', shortName: 'Shirt', quantity: 3, price: 20 };
     const mockBulkShirtDiscount = { type: DiscountType.Bulk, itemCode: ItemCode.TShirt, name: 'x3 Shirt offer', subTotal: 3 };
 
     it('should initialize with no discounts', () => {

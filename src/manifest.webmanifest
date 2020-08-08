@@ -1,6 +1,6 @@
 {
-  "short_name": "Cabify Checkout",
-  "name": "Cabify Checkout Challenge",
+  "short_name": "React Swag Demo",
+  "name": "React Swag Demo",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#7350FF",
+  "theme_color": "#00A9F7",
   "background_color": "#717285"
 }

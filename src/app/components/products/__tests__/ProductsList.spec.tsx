@@ -11,9 +11,9 @@ describe('ProductsList', () => {
   const removeHandlerStub = jest.fn();
   const selectHandlerStub = jest.fn();
   const cartItemsMock: CartItem[] = [
-    { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'Cabify T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 },
-    { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'Cabify Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-    { id: 'X3W2OPY', code: ItemCode.Cap, name: 'Cabify Cap', shortName: 'Cap', price: 10.00, quantity: 3 },
+    { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 },
+    { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
+    { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 3 },
   ];
 
   beforeEach(() => render(

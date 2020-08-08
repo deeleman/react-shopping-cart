@@ -4,28 +4,28 @@
 // Edit theme settings below at your convenience
 // ----------------------------------------------
 // - Main Background Image
-$appBackgroundImage         : '~/img/background.png';
+$appBackgroundImage         : '~/img/background.jpg';
 // - Fonts family set
 $appFontsFamily             : Avenir, 'Avenir Next', 'Segoe UI', sans-serif;
 // - Theme color palette
 $theme: (
   'mainBackgroundColor'     : #212240,
   'backgroundContainer'     : #ffffff,
-  'loader'                  : #7350ff,
-  'quantityButton'          : #7350ff,
+  'loader'                  : #00A9F7,
+  'quantityButton'          : #00A9F7,
   'quantityInput'           : #dbdbe0,
   'header'                  : #000000,
   'subHeader'               : #717285,
   'headerBorder'            : rgba(33, 34, 64, 0.16),
   'tableHeader'             : #a6a7b3,
   'asideBlockBorder'        : rgba(33, 34, 64, 0.16),
-  'productName'             : #7350ff,
+  'productName'             : #00A9F7,
   'productPrice'            : #000000,
   'thumbsBorder'            : #cacad1,
   'summaryBackground'       : #f3f3f3,
   'summaryTextColor'        : #212240,
   'ctaColor'                : #ffffff,
-  'ctaBackground'           : #7350ff,
+  'ctaBackground'           : #00A9F7,
 );
 // - Responsive threshold
 $breakpoint                 : 760px;
