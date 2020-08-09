@@ -6,7 +6,7 @@
 [![Website deeleman-react-shopping-cart.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-react-shopping-cart.netlify.app.svg)](https://deeleman-react-shopping-cart.netlify.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Interactive, customisable shopping cart demo with discounts computation functionality and real-time total order price tracking, built on top of HTML, [SASS](https://sass-lang.com/), [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI enhanced by (limited) responsivity.
+Interactive, customisable shopping cart demo with discounts computation functionality and real-time total order price tracking, built on top of HTML, [SASS](https://sass-lang.com/), [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI enhanced by (limited) responsiveness.
 
 A **live running build** of this project is available at https://deeleman-react-shopping-cart.netlify.app.
 
@@ -37,7 +37,7 @@ You will want to rebuild the project after updating these settings, although thi
 The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/items.ts#L7-L12) and [DiscountRule](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/discounts.ts#L10-L15) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](public/api/fixtures) folder.
 
 #### Color themes
-The overall aplication theme and minor responsivity settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.
+The overall aplication theme and minor responsiveness settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.
 
 ## Firing up a development environment
 You can spawn a development environment by running `yarn dev` or `npm run dev` in the console.
@@ -58,6 +58,8 @@ The code in this application is audited with
 
 ### Code coverage reports
 [Jest](https://jestjs.io/) has been configured to generate a full code coverage report in HTML format on every time run of the `test` command. This coverage report can be found at `/coverage/lcov-report` after tests are run successfully.
+
+Code coverage reports are also [available online at Coveralls.io](https://coveralls.io/github/deeleman/react-shopping-cart?branch=master).
 
 ## Distributed under the MIT License
 
