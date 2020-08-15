@@ -1,9 +1,10 @@
 import { CartItem, DiscountItem, ItemCode, PricingRules } from 'shopping-cart/types';
-import { DiscountsService } from './../services';
+import { DiscountsService } from '../services';
 import { CheckoutScanner, CheckoutTotal } from './checkout.types';
 
 /**
  * The Checkout class represents a stateful shopping cart object
+ * @deprecated This class is set to be removed upon introducing Redux
  */
 export class Checkout implements CheckoutScanner, CheckoutTotal {
   /**

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal, ProductModal } from './components';
-import { Checkout } from './models';
+import { Checkout } from './checkout';
 import { dataService } from './services/data-service';
 import { CartItem, DiscountItem, ItemCode, PricingSettings, PricingRules } from './types';
 
