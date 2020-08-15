@@ -15,6 +15,7 @@
     "lint": "eslint --ext .ts --ext .tsx src"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "1.4.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "whatwg-fetch": "3.2.0"
@@ -42,6 +43,7 @@
     "jest": "26.1.0",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-static-files-copy": "2.4.3",
+    "redux-devtools": "3.6.1",
     "rimraf": "3.0.2",
     "sass": "1.26.10",
     "typescript": "3.9.6"
