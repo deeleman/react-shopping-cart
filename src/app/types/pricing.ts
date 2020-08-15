@@ -1,5 +1,4 @@
-import { Item } from './items';
-import { DiscountRule } from './discounts';
+import { Item, DiscountRule } from './api';
 
 export type PricingRules = {
   items: Item[];

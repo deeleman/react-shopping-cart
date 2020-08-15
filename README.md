@@ -34,7 +34,7 @@ You will want to rebuild the project after updating these settings, although thi
 
 #### Type schemas to abide when configuring custom API endpoints
 
-The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [Item](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/items.ts#L7-L12) and [DiscountRule](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/discounts.ts#L10-L15) type schemas, corresponding to product items and discount rules, respectively. Feel free to check the examples provided in the [API fixtures](public/api/fixtures) folder.
+The application comes preconfigured with testing URLs pointing to local JSON resources. In case you want to fetch data from any other third-party API of your choice, please refer to the [API model schemas](https://github.com/deeleman/react-shopping-cart/blob/master/src/app/types/api.ts), corresponding to product items and discount rules. Feel free to check the examples provided in the [API fixtures](public/api/fixtures) folder.
 
 #### Color themes
 The overall aplication theme and minor responsiveness settings have been striped out from the application stylesheets and made available as an editable SASS map available at [src/sass/_theme.scss](src/sass/_theme.scss) for your editing delight.

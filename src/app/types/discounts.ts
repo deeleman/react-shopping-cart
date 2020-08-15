@@ -1,18 +1,4 @@
-import { ItemCode } from './items';
-
-export enum DiscountType {
-  '2x1'     = '2x1',
-  Bulk      = 'bulk',
-  PromoCode = 'promoCode',
-  Other     = 'other',
-}
-
-export interface DiscountRule {
-  type: DiscountType;
-  eligibleItems: ItemCode[];
-  minimumItems: number;
-  discount?: number;
-}
+import { ItemCode, DiscountRule, DiscountType } from './api';
 
 export interface PromoCodeDiscountRule extends DiscountRule {
   code: string;
