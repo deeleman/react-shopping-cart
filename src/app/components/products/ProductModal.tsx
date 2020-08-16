@@ -33,9 +33,9 @@ export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ item,
             <span>{item.price} €</span>
           </h3>
           <p className="modal__description-abstract">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam feugiat tristique tortor sed 
-            rhoncus. Sed a odio et metus blandit lobortis. Aliquam justo ligula, laoreet eu diam vel, 
-            dapibus auctor turpis. Maecenas enim dolor, faucibus at neque eu, tempus consequat sapien.
+            Surprise your friends and family with this fantastic <strong>{item.name}</strong> branded
+            with your favorite JavaScript library. This {item.name.toLowerCase()} has been manufactured
+            with the best quality materials and it is designed to endure long time and regular washing.
           </p>
           <h4 className="modal__description-code">Product code {item.id}</h4>
           <div>
