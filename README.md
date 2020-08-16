@@ -4,9 +4,10 @@
 [![Build Status](https://travis-ci.org/deeleman/react-shopping-cart.svg?branch=master)](https://travis-ci.org/deeleman/react-shopping-cart)
 [![Coverage Status](https://coveralls.io/repos/github/deeleman/react-shopping-cart/badge.svg?branch=master)](https://coveralls.io/github/deeleman/react-shopping-cart?branch=master)
 [![Website deeleman-react-shopping-cart.netlify.app](https://img.shields.io/website-up-down-green-red/https/deeleman-react-shopping-cart.netlify.app.svg)](https://deeleman-react-shopping-cart.netlify.app)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub license](https://img.shields.io/github/license/deeleman/react-shopping-cart.svg)](https://github.com/deeleman/react-shopping-cart/blob/master/LICENSE)
+[![GitHub version](https://badge.fury.io/gh/deeleman%2Freact-shopping-cart.svg)](https://github.com/deeleman/react-shopping-cart)
 
-Interactive, customisable shopping cart demo with discounts computation functionality and real-time total order price tracking, built on top of HTML, [SASS](https://sass-lang.com/), [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI enhanced by (limited) responsiveness.
+Interactive, customisable shopping cart demo with discounts computation functionality and real-time total order price tracking, built on top of HTML, [SASS](https://sass-lang.com/), [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/) and the [Redux Toolkit](https://redux-toolkit.js.org/), and leveraging the [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) for comprehensive features validation in a UI enhanced by (limited) responsiveness.
 
 A **live running build** of this project is available at https://deeleman-react-shopping-cart.netlify.app.
 
