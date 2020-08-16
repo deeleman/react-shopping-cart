@@ -32,10 +32,9 @@ describe('httpService', () => {
   });
 
   it('should statically type the returning recordset if the API responds successfully', async () => {
-    type expectedType = Array<{ id: string; code: string; name: string; price: number }>;
+    type expectedType = Array<{ id: string; name: string; price: number }>;
     const isExpectedType = (input: any): input is expectedType =>
       (input as expectedType)[0].id !== undefined &&
-      (input as expectedType)[0].code !== undefined &&
       (input as expectedType)[0].name !== undefined &&
       (input as expectedType)[0].price !== undefined;
 

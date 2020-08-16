@@ -7,4 +7,6 @@ export const images = {
   tshirtLarge: 'tshirtLarge.png',
   fallback: 'fallback.png',
   fallbackLarge: 'fallbackLarge.png',
+  sticker: 'sticker.png',
+  stickerLarge: 'stickerLarge.png',
 };

@@ -20,7 +20,7 @@ describe('App integration tests', () => {
   it('should render product items once fetched', async () => {
     const { findAllByLabelText, getAllByLabelText } = renderApp();
     await findAllByLabelText('product-name');
-    expect(getAllByLabelText('product-name')).toHaveLength(3);
+    expect(getAllByLabelText('product-name')).toHaveLength(4);
   });
 
   it('should increase and decrease product quantities upon clicking on the PLUS/MINUS symbol', async () => {
