@@ -7,11 +7,15 @@ export enum ItemCode {
   Cap     = 'CAP'
 }
 
-export interface Item {
+export interface CartId {
   id: string;
+}
+
+export interface Item extends CartId {
   code: ItemCode;
   name: string;
   price: number;
+  shortName: string;
 }
 
 export enum DiscountType {

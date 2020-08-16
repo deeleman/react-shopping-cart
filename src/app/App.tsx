@@ -1,88 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.scss';
-import { Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal, ProductModal } from './components';
-import { Checkout } from './checkout';
-import { dataService } from './services/data-service';
-import { CartItem, DiscountItem, ItemCode, PricingSettings, PricingRules } from './types';
+import { ProductModal, Products, ProductsList, Summary, SummaryDiscounts, SummaryItems, SummaryTotal } from './components';
+import { 
+  add,
+  fetchItems,
+  remove,
+  selectCartItems,
+  selectCartItemsAmount,
+  selectCartSubtotal,
+  selectCartTotal,
+  selectDiscountItems,
+  selectIsLoading } from './store';
+import { Item, PricingSettings } from './types';
 
 interface AppProps {
-  settings: PricingSettings,
+  settings: PricingSettings;
 }
 
-interface AppState {
-  cartItems: CartItem[];
-  discountItems: DiscountItem[];
-  orderedItemsQuantity: number;
-  subTotal: number;
-  total: number;
-  isLoading: boolean;
-  selectedItem?: CartItem;
-}
+export const App: React.FunctionComponent<AppProps> = ({ settings }) => {
+  const dispatch = useDispatch();
 
-export class App extends React.Component<AppProps, AppState> {
-  readonly state: AppState;
+  const isLoading = useSelector(selectIsLoading);
+  const cartItems = useSelector(selectCartItems);
+  const cartItemsAmount = useSelector(selectCartItemsAmount);
+  const discountItems = useSelector(selectDiscountItems);
+  const cartSubtotal = useSelector(selectCartSubtotal);
+  const cartTotal = useSelector(selectCartTotal);
 
-  private checkout!: Checkout;
+  const [selectedItem, setSelectedItem] = useState<Item | undefined>(undefined);
 
-  constructor(props: AppProps) {
-    super(props);
+  useEffect(() => {
+    dispatch(fetchItems(settings));
+  }, []);
 
-    this.state = {
-      cartItems: [],
-      discountItems: [],
-      orderedItemsQuantity: 0,
-      subTotal: 0,
-      total: 0,
-      isLoading: true,
-    };
+  const addItem = (itemId: string, quantity?: number): void => {
+    dispatch(add({ id: itemId, quantity }));
   }
 
-  async componentDidMount(): Promise<void> {
-    const pricingRules = await dataService<PricingRules>(this.props.settings);
-    this.checkout = new Checkout(pricingRules);
-    this.setState({ isLoading: false });
-    this.updateState();
+  const removeItem = (itemId: string): void => {
+    dispatch(remove(itemId));
   }
 
-  render(): JSX.Element {
-    return (
-      <main className="App">
-        <Products isLoading={this.state.isLoading}>
-          <ProductsList items={this.state.cartItems} scan={this.scan} remove={this.remove} select={this.toggleModal} />
-          <ProductModal cartItem={this.state.selectedItem} scan={this.scan} close={this.toggleModal} />
-        </Products>
-        <Summary>
-          <SummaryItems quantity={this.state.orderedItemsQuantity} subTotal={this.state.subTotal} />
-          <SummaryDiscounts items={this.state.discountItems} />
-          <SummaryTotal isLoading={this.state.isLoading} total={this.state.total} />
-        </Summary>
-      </main>
-    );
-  }
+  const toggleModal = (item?: Item): void => {
+    setSelectedItem(item);
+  };
 
-  scan = (itemCode: ItemCode, quantity?: number): void => {
-    this.checkout.scan(itemCode, quantity);
-    this.updateState();
-  }
-
-  remove = (itemCode: ItemCode): void => {
-    this.checkout.remove(itemCode);
-    this.updateState();
-  }
-
-  toggleModal = (selectedItem?: CartItem): void => {
-    this.setState({ selectedItem });
-  }
-
-  private updateState(): void {
-    const { cartItems, discountItems, subTotal, orderedItemsQuantity } = this.checkout;
-
-    this.setState({
-      cartItems,
-      orderedItemsQuantity,
-      discountItems,
-      subTotal,
-      total: this.checkout.total(),
-    });
-  }
+  return (
+    <main className="App">
+      <Products isLoading={isLoading}>
+        <ProductsList items={cartItems} scan={addItem} remove={removeItem} select={toggleModal} />
+        <ProductModal item={selectedItem} scan={addItem} close={toggleModal} />
+      </Products>
+      <Summary>
+        <SummaryItems quantity={cartItemsAmount} subTotal={cartSubtotal} />
+        <SummaryDiscounts items={discountItems} />
+        <SummaryTotal isLoading={isLoading} total={cartTotal} />
+      </Summary>
+    </main>
+  );
 }

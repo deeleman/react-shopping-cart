@@ -7,10 +7,10 @@ import { httpService } from './http-service';
  */
 export const dataService = async <T>(settings: Record<keyof T, string>): Promise<T> => {
   const keys = Object.keys(settings);
-  const asynchttpServices = Object.values<string>(settings).map(httpService);
+  const asyncHttpServices = Object.values<string>(settings).map(httpService);
 
   return Promise
-    .all(asynchttpServices)
+    .all(asyncHttpServices)
     .catch((error: Error) => Promise.reject(error))
     .then((responsesArray) => responsesArray.reduce(
       (responsesObject: Partial<T>, response: unknown, index: number) => ({
