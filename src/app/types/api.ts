@@ -1,15 +1,8 @@
-/**
- * @deprecated
- */
-export enum ItemCode {
-  TShirt  = 'SHIRT',
-  Mug     = 'MUG',
-  Cap     = 'CAP'
+export interface CartId {
+  id: string;
 }
 
-export interface Item {
-  id: string;
-  code: ItemCode;
+export interface Item extends CartId {
   name: string;
   price: number;
 }
@@ -23,7 +16,7 @@ export enum DiscountType {
 
 export interface DiscountRule {
   type: DiscountType;
-  eligibleItems: ItemCode[];
+  eligibleItems: string[];
   minimumItems: number;
   discount?: number;
 }

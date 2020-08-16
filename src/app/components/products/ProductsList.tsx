@@ -1,42 +1,42 @@
 import React from 'react';
-import { CartItem, ItemCode } from 'shopping-cart/types';
+import { CatalogueItem } from 'shopping-cart/types';
 import { Product } from './Product';
 import { ProductQuantity } from './ProductQuantity';
 import './ProductsList.scss';
 
 interface ProductsListProps {
-  items: CartItem[];
-  scan: (itemCode: ItemCode, quantity?: number) => void;
-  remove: (itemCode: ItemCode) => void;
-  select: (cartItem: CartItem) => void; 
+  items: CatalogueItem[];
+  scan: (itemId: string, quantity?: number) => void;
+  remove: (itemId: string) => void;
+  select: (item: CatalogueItem) => void; 
 }
 
 export const ProductsList: React.FunctionComponent<ProductsListProps> = ({ items, scan, remove, select }) => {
   return (
     <ul className="products-list" role="list">
-      { items.map((cartItem) => (
-        <li key={cartItem.id} className="product row" role="listitem">
+      { items.map((item) => (
+        <li key={item.id} className="product row" role="listitem">
           <div className="col-product">
             <Product
-              shortName={cartItem.shortName}
-              code={cartItem.id}
-              select={() => select(cartItem)}
+              name={item.name}
+              code={item.id}
+              select={() => select(item)}
             />
           </div>
           <div className="col-quantity">
             <ProductQuantity
-              quantity={cartItem.quantity}
-              add={() => scan(cartItem.code)}
-              remove={() => remove(cartItem.code)}
-              edit={(quantity) => scan(cartItem.code, quantity)}
+              quantity={item.quantity}
+              add={() => scan(item.id)}
+              remove={() => remove(item.id)}
+              edit={(quantity) => scan(item.id, quantity)}
             />
           </div>
           <div className="col-price" aria-label="price">
-            <span className="product-price">{cartItem.price}</span>
+            <span className="product-price">{item.price}</span>
             <span className="product-currency currency">€</span>
           </div>
           <div className="col-total" aria-label="total">
-            <span className="product-price">{cartItem.price * cartItem.quantity}</span>
+            <span className="product-price">{item.price * item.quantity}</span>
             <span className="product-currency currency">€</span>
           </div>
         </li>

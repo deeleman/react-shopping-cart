@@ -1,6 +1,7 @@
-import { Item } from './api';
+import { Item, CartId } from './api';
 
-export interface CartItem extends Item {
+export interface CartItem  extends CartId {
   quantity: number;
-  shortName: string;
 }
+
+export type CatalogueItem = Item & CartItem;

@@ -1,12 +1,12 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { DiscountType, ItemCode } from 'shopping-cart/types';
+import { DiscountType } from 'shopping-cart/types';
 import { SummaryDiscounts } from '../SummaryDiscounts';
 
 describe('SummaryDiscounts', () => {
-  const mugDiscountMock = { type: DiscountType['2x1'], itemCode: ItemCode.Mug, name: '2x1 Mug offer', subTotal: 10 };
-  const bulkShirtDiscountMock = { type: DiscountType.Bulk, itemCode: ItemCode.TShirt, name: 'x3 Shirt offer', subTotal: 4 };
+  const mugDiscountMock = { type: DiscountType['2x1'], name: '2x1 Mug offer', subTotal: 10 };
+  const bulkShirtDiscountMock = { type: DiscountType.Bulk, name: 'x3 Shirt offer', subTotal: 4 };
 
   it('should display a "No discounts..." fallback text if no items are provided', () => {
     render(<SummaryDiscounts />);
