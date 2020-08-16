@@ -1,6 +1,6 @@
 {
   "name": "shopping-cart",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Interactive, customisable shopping cart with discounts computation functionality",
   "main": "src/index.js",
   "author": "Pablo Deeleman <deeleman@gmail.com>",
