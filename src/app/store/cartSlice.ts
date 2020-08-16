@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CatalogueItem, DiscountItem, DiscountRule, Item, PricingRules, PricingSettings } from 'shopping-cart/types';
-import { dataService, getDiscountItems } from '../services';
+import { dataService, getDiscounts } from '../services';
 import { CartState } from './types';
 
 const initialState: CartState = {
@@ -29,13 +29,15 @@ const cartSlice = createSlice({
           action.payload.quantity : 
           cartItem.quantity + 1;
       } else {
-        state.cartItems.push({ id: action.payload.id, quantity: 1 });
+        state.cartItems.push({ id: action.payload.id, quantity: action.payload.quantity || 1 });
       }
     },
     remove: (state: CartState, action: PayloadAction<string>) => {
       const cartItem = state.cartItems.find((item) => item.id === action.payload);
       if (cartItem && cartItem.quantity > 0) {
         cartItem.quantity =  cartItem.quantity - 1; 
+      } else {
+        state.cartItems.push({ id: action.payload, quantity: 0 });
       }
     }
   },
@@ -44,10 +46,7 @@ const cartSlice = createSlice({
       state.isLoading = true;
     },
     [fetchItems.fulfilled.type]: (state: CartState, action: PayloadAction<PricingRules>) => {
-      state.items = action.payload.items.map((item) => ({ 
-        ...item,
-        shortName: item.code.charAt(0).toUpperCase() + item.code.slice(1).toLowerCase(),
-      }));
+      state.items = action.payload.items;
       state.discountRules = action.payload.discountRules;
       state.isLoading = false;
     },
@@ -63,7 +62,6 @@ export const { add, remove } = cartSlice.actions;
 
 // Exported Selectors
 export const selectIsLoading = (state: CartState): boolean => state.isLoading;
-export const selectHasError = (state: CartState): boolean => Boolean(state.lastError);
 export const selectCartItems = (state: CartState): CatalogueItem[] => {
   return state.items.map((item: Item) => {
     const catalogueItem = state.cartItems.find((cartItem) => cartItem.id === item.id);
@@ -76,7 +74,7 @@ export const selectDiscountRules = (state: CartState): DiscountRule[] => state.d
 export const selectDiscountItems = createSelector(
   selectCartItems,
   selectDiscountRules,
-  (cartItems: CatalogueItem[], discountRules: DiscountRule[]) => getDiscountItems(cartItems, discountRules),
+  (cartItems: CatalogueItem[], discountRules: DiscountRule[]) => getDiscounts(cartItems, discountRules),
 );
 export const selectCartItemsAmount = (state: CartState): number => {
   return state.cartItems.reduce((quantity, cartItem) => quantity + cartItem.quantity, 0);

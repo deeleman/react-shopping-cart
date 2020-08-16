@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom';
 import { render, fireEvent, screen } from '@testing-library/react';
 import React from 'react';
-import { CartItem, ItemCode } from 'shopping-cart/types';
+import { CatalogueItem } from 'shopping-cart/types';
 import { ProductsList } from '../ProductsList';
 
 jest.mock('./../../../../img/items');
@@ -10,10 +10,10 @@ describe('ProductsList', () => {
   const scanHandlerStub = jest.fn();
   const removeHandlerStub = jest.fn();
   const selectHandlerStub = jest.fn();
-  const cartItemsMock: CartItem[] = [
-    { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 },
-    { id: 'X2G2OPZ', code: ItemCode.Mug, name: 'React Coffee Mug', shortName: 'Mug', price: 5.00, quantity: 1 },
-    { id: 'X3W2OPY', code: ItemCode.Cap, name: 'React Cap', shortName: 'Cap', price: 10.00, quantity: 3 },
+  const cartItemsMock: CatalogueItem[] = [
+    { id: 'X7R2OPX', name: 'React T-Shirt', price: 20.00, quantity: 2 },
+    { id: 'X2G2OPZ', name: 'React Coffee Mug', price: 5.00, quantity: 1 },
+    { id: 'X3W2OPY', name: 'React Cap', price: 10.00, quantity: 3 },
   ];
 
   beforeEach(() => render(
@@ -38,48 +38,48 @@ describe('ProductsList', () => {
 
   it('should propagate and trigger the scan event handler after a click on a child add button', () => {
     fireEvent.click(screen.queryAllByLabelText('add')[0]);
-    expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.TShirt);
+    expect(scanHandlerStub).toHaveBeenCalledWith('X7R2OPX');
     scanHandlerStub.mockClear();
 
     fireEvent.click(screen.queryAllByLabelText('add')[1]);
-    expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.Mug);
+    expect(scanHandlerStub).toHaveBeenCalledWith('X2G2OPZ');
     scanHandlerStub.mockClear();
 
     fireEvent.click(screen.queryAllByLabelText('add')[2]);
-    expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.Cap);
+    expect(scanHandlerStub).toHaveBeenCalledWith('X3W2OPY');
     scanHandlerStub.mockClear();
   });
 
   it('should propagate and trigger the scan event handler after a click on a child remove button', () => {
     fireEvent.click(screen.queryAllByLabelText('remove')[0]);
-    expect(removeHandlerStub).toHaveBeenCalledWith(ItemCode.TShirt);
+    expect(removeHandlerStub).toHaveBeenCalledWith('X7R2OPX');
     removeHandlerStub.mockClear();
 
     fireEvent.click(screen.queryAllByLabelText('remove')[1]);
-    expect(removeHandlerStub).toHaveBeenCalledWith(ItemCode.Mug);
+    expect(removeHandlerStub).toHaveBeenCalledWith('X2G2OPZ');
     removeHandlerStub.mockClear();
 
     fireEvent.click(screen.queryAllByLabelText('remove')[2]);
-    expect(removeHandlerStub).toHaveBeenCalledWith(ItemCode.Cap);
+    expect(removeHandlerStub).toHaveBeenCalledWith('X3W2OPY');
     removeHandlerStub.mockClear();
   });
 
   it('should trigger the scan event handler adding units in the payload if populated manually', () => {
     fireEvent.change(screen.queryAllByLabelText('product-quantity')[0], { target: { value: 56 }});
-    expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.TShirt, 56);
+    expect(scanHandlerStub).toHaveBeenCalledWith('X7R2OPX', 56);
     scanHandlerStub.mockClear();
 
     fireEvent.change(screen.queryAllByLabelText('product-quantity')[1], { target: { value: 12 }});
-    expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.Mug, 12);
+    expect(scanHandlerStub).toHaveBeenCalledWith('X2G2OPZ', 12);
     scanHandlerStub.mockClear();
 
     fireEvent.change(screen.queryAllByLabelText('product-quantity')[2], { target: { value: 0 }});
-    expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.Cap, 0);
+    expect(scanHandlerStub).toHaveBeenCalledWith('X3W2OPY', 0);
     scanHandlerStub.mockClear();
   });
 
   it('should trigger the select event handler when clicking on the product name or thumbnail', () => {
-    fireEvent.click(screen.getByText('Cap'));
+    fireEvent.click(screen.getByText('React Cap'));
     expect(selectHandlerStub).toHaveBeenCalledWith(cartItemsMock[2]); // Cap cart item
     selectHandlerStub.mockClear();
 

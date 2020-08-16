@@ -10,6 +10,8 @@ interface ProductModalProps {
   close: () => void;
 }
 
+const sanitizeName = (name: string) => name.split(' ').pop()?.replace('-', '').toLowerCase();
+
 export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ item, scan, close }) => {
   const scanItemHandler = (scannedItem: Item) => {
     scan(scannedItem.id);
@@ -22,7 +24,7 @@ export const ProductModal: React.FunctionComponent<ProductModalProps> = ({ item,
         <figure
           role="img"
           className="modal__image"
-          style={{ backgroundImage: `url(${images[`${item.shortName.toLowerCase()}Large`] || images['fallbackLarge']})` }}
+          style={{ backgroundImage: `url(${images[`${sanitizeName(item.name)}Large`] || images['fallbackLarge']})` }}
         >
         </figure>
         <aside className="modal__description">

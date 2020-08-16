@@ -23,12 +23,11 @@ const getDiscountItemByRule = (cartItem: CatalogueItem, discountRule: DiscountRu
 
 const composeDiscountItem = (discountRule: DiscountRule, cartItem: CatalogueItem, subTotal = 0): DiscountItem => {
   const name = discountRule.type === DiscountType['2x1'] ? 
-    `2x1 ${cartItem.shortName} offer` :
-    `x${discountRule.minimumItems} ${cartItem.shortName} offer`;
+    `2x1 ${cartItem.name} offer` :
+    `x${discountRule.minimumItems} ${cartItem.name} offer`;
 
   return {
     type: discountRule.type,
-    itemCode: cartItem.code,
     name,
     subTotal,
   };
@@ -39,7 +38,7 @@ const composeDiscountItem = (discountRule: DiscountRule, cartItem: CatalogueItem
  * @param cartItems cart items to compute discounts applicable
  * @param discountRule discount rules as retrieved from store
  */
-export const getDiscountItems = (cartItems: CatalogueItem[], discountRules: DiscountRule[]): DiscountItem[] => {
+export const getDiscounts = (cartItems: CatalogueItem[], discountRules: DiscountRule[]): DiscountItem[] => {
   return cartItems.reduce((discountItems, cartItem) =>
     [...discountItems, ...getDiscountsByCartItem(cartItem, discountRules)],
     [] as DiscountItem[]);
@@ -55,7 +54,7 @@ export const getDiscountsByCartItem = (cartItem: CatalogueItem, discountRules: D
 
  discountRules.forEach((discountRule) => {
    const minimumItems = discountRule.type === DiscountType['2x1'] ? 2 : discountRule.minimumItems || 0;
-   if (discountRule.eligibleItems.indexOf(cartItem.code) >= 0 && cartItem.quantity >= minimumItems) {
+   if (discountRule.eligibleItems.indexOf(cartItem.id) >= 0 && cartItem.quantity >= minimumItems) {
      const discountItem = getDiscountItemByRule(cartItem, discountRule);
      if (discountItem.subTotal > 0) {
        discountItems.push(discountItem);

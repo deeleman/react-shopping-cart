@@ -2,18 +2,18 @@ import '@testing-library/jest-dom';
 import { render, fireEvent, screen, cleanup } from '@testing-library/react';
 import React from 'react';
 import { ProductModal } from '../ProductModal';
-import { ItemCode, CartItem } from 'shopping-cart/types';
+import { Item } from 'shopping-cart/types';
 
 jest.mock('./../../../../img/items');
 
 describe('ProductModal', () => {
   const scanHandlerStub = jest.fn();
   const closeHandlerStub = jest.fn();
-  const cartItemMock: CartItem = { id: 'X7R2OPX', code: ItemCode.TShirt, name: 'React T-Shirt', shortName: 'Shirt', price: 20.00, quantity: 2 };
+  const cartItemMock: Item = { id: 'X7R2OPX', name: 'React T-Shirt', price: 20.00 };
 
-  const setupTest = (cartItem?: CartItem) => render(
+  const setupTest = (cartItem?: Item) => render(
     <ProductModal
-      cartItem={cartItem}
+      item={cartItem}
       scan={scanHandlerStub}
       close={closeHandlerStub}
     />
@@ -38,27 +38,27 @@ describe('ProductModal', () => {
 
   it('should display the product image in large format', () => {
     setupTest(cartItemMock);
-    expect(screen.getByRole('img').getAttribute('style')).toContain('shirtLarge.png'); 
+    expect(screen.getByRole('img').getAttribute('style')).toContain('tshirtLarge.png'); 
   });
 
   it('should display a fallback image if the product has not thumbnail matching its code', () => {
     cleanup();
-    const cartItemFakeMock = { ...cartItemMock, shortName: 'Foo' };
-    render(<ProductModal cartItem={cartItemFakeMock} scan={scanHandlerStub} close={closeHandlerStub} />);
+    const cartItemFakeMock = { ...cartItemMock, name: 'React Underwear' };
+    render(<ProductModal item={cartItemFakeMock} scan={scanHandlerStub} close={closeHandlerStub} />);
     expect(screen.getByRole('img').getAttribute('style')).toContain('fallbackLarge.png'); 
   });
 
   it('should call the scan handler upon clicking on the add to cart button and then trigger the close event', () => {
     setupTest(cartItemMock);
     fireEvent.click(screen.getAllByRole('button')[0]);
-    expect(scanHandlerStub).toHaveBeenCalledWith(ItemCode.TShirt);
+    expect(scanHandlerStub).toHaveBeenCalledWith(cartItemMock.id);
     expect(closeHandlerStub).toHaveBeenCalled();
   });
   
   it('should trigger the close event upon clicking on the X icon', () => {
     setupTest(cartItemMock);
     fireEvent.click(screen.getAllByRole('button')[1]);
-    expect(scanHandlerStub).not.toHaveBeenCalledWith(ItemCode.TShirt);
+    expect(scanHandlerStub).not.toHaveBeenCalled();
     expect(closeHandlerStub).toHaveBeenCalled();
   });
 

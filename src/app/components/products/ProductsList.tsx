@@ -18,7 +18,7 @@ export const ProductsList: React.FunctionComponent<ProductsListProps> = ({ items
         <li key={item.id} className="product row" role="listitem">
           <div className="col-product">
             <Product
-              shortName={item.shortName}
+              name={item.name}
               code={item.id}
               select={() => select(item)}
             />
