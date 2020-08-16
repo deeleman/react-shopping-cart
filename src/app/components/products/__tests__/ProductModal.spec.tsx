@@ -23,7 +23,7 @@ describe('ProductModal', () => {
 
   it('should display the product name', () => {
     setupTest(cartItemMock);
-    expect(screen.getByText('React T-Shirt')).toBeInTheDocument();
+    expect(screen.getAllByText('React T-Shirt').length).toBeGreaterThanOrEqual(1);
   });
 
   it('should display the product price', () => {
